@@ -49,6 +49,7 @@ if (isset($_POST['passe']) && isset($_POST['usuario']) && isset($_POST['senha'])
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,19 +57,30 @@ if (isset($_POST['passe']) && isset($_POST['usuario']) && isset($_POST['senha'])
     <link rel="stylesheet" href="login.css">
     <title>LOGIN</title>
 </head>
+
 <body>
-    <form action="" method="POST" name="form1">
-        <label for="passe">Passe:</label>
-        <input type="text" name="passe">
+    <div class="container" id="container">
+        <div class="form-container sign-up">
 
-        <label for="usuario">Usuário:</label>
-        <input type="text" name="usuario">
+            <form action="" method="POST" name="form1">
 
-        <label for="senha">Senha:</label>
-        <input type="password" name="senha">
+                <h1>Entrar</h1>
+                <label for="passe">Passe:</label>
+                <input type="text" name="passe">
 
-        <input type="submit" value="Entrar">
-    </form>
-    
+                <label for="usuario">Usuário:</label>
+                <input type="text" name="usuario">
+
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha">
+
+                <input type="submit" value="Entrar">
+            </form>
+
+        </div>
+    </div>
+
+    <script src="login.js"></script>
 </body>
+
 </html>
