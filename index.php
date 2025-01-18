@@ -59,46 +59,31 @@ if (isset($_POST['passe']) && isset($_POST['usuario']) && isset($_POST['senha'])
 </head>
 
 <body>
-    <div class="container" id="container">
+<div class="container" id="container">
 
-        <div class="form-container sign-up">
-            <form action="" method="POST" name="form1">
+    <div class="form-container sign-in">
+        <form action="" method="POST" name="form1">
+            <h1>Entrar</h1>
+            <input type="text" name="passe" placeholder="Passe">
+            <input type="text" name="usuario" placeholder="Usuário">
+            <input type="password" name="senha" placeholder="Senha">
+            <button>Entrar</button>
+        </form>
+    </div>
 
-                <h1>Entrar</h1>
-                <input type="text" name="passe" placeholder="Passe">
-
-                <input type="text" name="usuario" placeholder="Usuário">
-
-                <input type="password" name="senha" placeholder="Senha">
-
-                <input type="submit" value="Entrar">
-            </form>
-        </div>
-
-        <div class="form-container sign-in">
-            <form action="" method="POST" name="form1">
-                <h1>Administrador BC</h1>
-            </form>
-        </div>
-
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Bem Vindo de volta!</h1>
-                    <p>Olá, administrador! Entre com seus dados para ter ações ás funções.</p>
-                    <button type="hidden" id="login">Login</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Olá, você está acessando o site Administrador do BIBLIÓFILOS Community!</h1>
-                    <p>É necessário que um administrador já cadastrado realize o cadastro de um novo colaborador.</p>
-                    
-                    <button type="hidden" id="register">sign up</button>
-                </div>
+    <div class="toggle-container">
+        <div class="toggle">
+            <div class="toggle-panel toggle-right">
+                <h1>Olá, você está acessando o site Administrador do BIBLIÓFILOS Community!</h1>
+                <p>É necessário que um administrador já cadastrado realize o cadastro de um novo colaborador.</p>
             </div>
         </div>
     </div>
+</div>
 
-    <script src="login.js"></script>
+
+<script src="login.js"></script>
+
 </body>
 
 </html>
