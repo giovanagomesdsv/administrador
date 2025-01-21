@@ -18,38 +18,6 @@ include "../conexao-banco/conexao.php";
         <a href="novoautor.php">Adicionar novo autor</a>
     </div>
 
-    <?php
-    $consulta = "SELECT 
-        escritor.id_escritor, 
-        escritor.nome, 
-        escritor.foto_url, 
-        COUNT(resenha.id_escritor) AS total_resenhas 
-    FROM escritor 
-    LEFT JOIN resenha ON escritor.id_escritor = resenha.id_escritor 
-    GROUP BY escritor.id_escritor, escritor.nome, escritor.foto_url";
-
-    if ($resposta = mysqli_query($conn, $consulta)) {
-
-        while ($linha = mysqli_fetch_array($resposta)) {
-            echo "
-            <div>
-               <div>
-                  <img src='{$linha['foto_url']}'>
-                  <p>{$linha['nome']}</p>
-               </div>
-               <div>
-                  <p>{$linha['total_resenhas']}</p>
-               </div>
-               <a href='altera-formulario-autores.php?id={$linha['id_escritor']}'>
-                  <div class=\"bx bxs-edit-alt\"></div>
-               </a>
-            </div>";
-        }
-    } else {
-        echo "<p>Erro ao executar a consulta: " . mysqli_error($conn) . "</p>";
-    }
-    ?>
-
     <div class="pesquisar">
         <form action="" method="GET">
             <input type="text" name="busca" placeholder="Busque os autores...">
@@ -102,6 +70,40 @@ include "../conexao-banco/conexao.php";
 
         ?>
     </div>
+
+    <?php
+    $consulta = "SELECT 
+        escritor.id_escritor, 
+        escritor.nome, 
+        escritor.foto_url, 
+        COUNT(resenha.id_escritor) AS total_resenhas 
+    FROM escritor 
+    LEFT JOIN resenha ON escritor.id_escritor = resenha.id_escritor 
+    GROUP BY escritor.id_escritor, escritor.nome, escritor.foto_url";
+
+    if ($resposta = mysqli_query($conn, $consulta)) {
+
+        while ($linha = mysqli_fetch_array($resposta)) {
+            echo "
+            <div>
+               <div>
+                  <img src='{$linha['foto_url']}'>
+                  <p>{$linha['nome']}</p>
+               </div>
+               <div>
+                  <p>{$linha['total_resenhas']}</p>
+               </div>
+               <a href='altera-formulario-autores.php?id={$linha['id_escritor']}'>
+                  <div class=\"bx bxs-edit-alt\"></div>
+               </a>
+            </div>";
+        }
+    } else {
+        echo "<p>Erro ao executar a consulta: " . mysqli_error($conn) . "</p>";
+    }
+    ?>
+
+   
 
 </body>
 
