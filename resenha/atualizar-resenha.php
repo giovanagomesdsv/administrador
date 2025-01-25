@@ -5,7 +5,7 @@ $id = $_GET['id'];
 
 $resenha = $_POST['resenha'];
 $slug = $_POST['slug'];
-$foto_url = $_POST['foto_url'];
+$foto_url = $_POST['imagem'];
 $genero = $_POST['genero'];
 $sinopse = $_POST['sinopse'];
 $conteudo = $_POST['conteudo'];
