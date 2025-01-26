@@ -82,7 +82,7 @@ if (isset($_POST['passe']) && isset($_POST['usuario']) && isset($_POST['senha'])
 </div>
 
 
-<script src="login.js"></script>
+
 
 </body>
 
