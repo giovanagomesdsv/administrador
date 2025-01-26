@@ -55,7 +55,7 @@ if (isset($_POST['passe']) && isset($_POST['usuario']) && isset($_POST['senha'])
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="login.css">
-    <title>LOGIN</title>
+    <title>Administrador BC - Login</title>
 </head>
 
 <body>
@@ -67,7 +67,7 @@ if (isset($_POST['passe']) && isset($_POST['usuario']) && isset($_POST['senha'])
             <input type="text" name="passe" placeholder="Passe">
             <input type="text" name="usuario" placeholder="Usuário">
             <input type="password" name="senha" placeholder="Senha">
-            <button>Entrar</button>
+            <button id="btn">Entrar</button>
         </form>
     </div>
 
