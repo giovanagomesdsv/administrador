@@ -26,7 +26,7 @@ include "../conexao-banco/conexao.php";
                 ar.nome,
                 ar.pseudonimo,
                 ar.email,
-                ar.foto_url,
+                ar.path,
                 ar.pontos,
                 ar.telefone,
                 COUNT(r.id_resenha) AS total_resenhas
@@ -37,7 +37,7 @@ include "../conexao-banco/conexao.php";
             ON 
                 ar.id_autor_resenha = r.id_autor_resenha
             GROUP BY 
-                ar.id_autor_resenha, ar.nome, ar.pseudonimo, ar.email, ar.foto_url, ar.pontos
+                ar.id_autor_resenha, ar.nome, ar.pseudonimo, ar.email, ar.path, ar.pontos
         ";
 
         if ($resp_consulta = mysqli_query($conn, $consulta)) {
@@ -48,7 +48,7 @@ include "../conexao-banco/conexao.php";
                 echo "
             <div>
                 <div>
-                    <a href=\"https://wa.me/{$linha['telefone']}?text=$mensagem\" target=\"_blank\"><img src='{$linha['foto_url']}' alt='Foto do Resenhista'></a>
+                    <a href=\"https://wa.me/{$linha['telefone']}?text=$mensagem\" target=\"_blank\"><img src='{$linha['path']}' alt='Foto do Resenhista'></a>
                     <h3>{$linha['nome']}</h3>
                     <p><strong>Pseudônimo:</strong> {$linha['pseudonimo']}</p>
                     <p><strong>Email:</strong> {$linha['email']}</p>

@@ -35,12 +35,12 @@ include "../conexao-banco/conexao.php";
             $code = "SELECT 
         escritor.id_escritor, 
         escritor.nome, 
-        escritor.foto_url, 
+        escritor.path, 
         COUNT(resenha.id_escritor) AS total_resenhas 
     FROM escritor 
     LEFT JOIN resenha ON escritor.id_escritor = resenha.id_escritor 
      WHERE escritor.nome LIKE '%$pesquisa%'
-    GROUP BY escritor.id_escritor, escritor.nome, escritor.foto_url
+    GROUP BY escritor.id_escritor, escritor.nome, escritor.path
                             ";
 
             $sql_consulta = $conn->query($code) or die("Erro ao consultar: " . $conn->error);
@@ -52,7 +52,7 @@ include "../conexao-banco/conexao.php";
                     echo "
                     <div>
                        <div>
-                          <img src='{$linha['foto_url']}'>
+                          <img src='{$linha['path']}'>
                           <p>{$linha['nome']}</p>
                        </div>
                        <div>
@@ -75,11 +75,11 @@ include "../conexao-banco/conexao.php";
     $consulta = "SELECT 
         escritor.id_escritor, 
         escritor.nome, 
-        escritor.foto_url, 
+        escritor.path, 
         COUNT(resenha.id_escritor) AS total_resenhas 
     FROM escritor 
     LEFT JOIN resenha ON escritor.id_escritor = resenha.id_escritor 
-    GROUP BY escritor.id_escritor, escritor.nome, escritor.foto_url";
+    GROUP BY escritor.id_escritor, escritor.nome, escritor.path";
 
     if ($resposta = mysqli_query($conn, $consulta)) {
 
@@ -87,7 +87,7 @@ include "../conexao-banco/conexao.php";
             echo "
             <div>
                <div>
-                  <img src='{$linha['foto_url']}'>
+                  <img src='{$linha['path']}'>
                   <p>{$linha['nome']}</p>
                </div>
                <div>

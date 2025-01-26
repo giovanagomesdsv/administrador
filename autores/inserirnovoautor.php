@@ -4,11 +4,31 @@ include "../conexao-banco/conexao.php";
 $slug = $_POST['slug'];
 $nome = $_POST['nome'];
 $biografia = $_POST['biografia'];
-$foto_url = $_POST['imagem'];   
                             
+if (isset($_FILES['arquivo'])) {
+    $arquivo = $_FILES['arquivo'];
 
+    if ($arquivo['error'])
+        die("Falha ao enviar arquivo");
 
-$sql_code = "INSERT INTO escritor ( slug, nome, biografia, foto_url) VALUES ( '$slug', '$nome', '$biografia', '$foto_url')";
+    if ($arquivo['size'] > 2097152) 
+        die("Arquivo muito grande! Max: 2MB");
+
+        $pasta = "img-autores/";
+
+        $nomeDoArquivo = $arquivo['name'];
+        $novoNomeDoArquivo = uniqid();
+        $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
+
+    if($extensao != "jpg" && $extensao != 'png')
+       die("Tipo de arquivo não aceito!");
+
+       $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
+
+       $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
+}
+
+$sql_code = "INSERT INTO escritor ( slug, nome, biografia, path) VALUES ( '$slug', '$nome', '$biografia', '$path')";
 
 
 if (mysqli_query($conn, $sql_code)) {

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="inserirnovaparceria.php" method="POST" name="cadastroparcerias">
+    <form action="inserirnovaparceria.php" enctype="multipart/form-data" method="POST" name="cadastroparcerias">
         <h1>CADASTRO DE PARCERIAS</h1>
         <label for="cnpj">CNPJ:</label>
         <input type="text" name="cnpj">
@@ -55,8 +55,8 @@
         <label for="x">x:</label>
         <input type="text" name="x" placeholder="URL">
 
-        <label for="imagem">Foto:</label>
-        <input type="text" name="imagem" placeholder="URL">
+        <label for="arquivo">Selecione uma imagem</label>
+        <input type="file" name="arquivo">
 
         <input type="submit" value="cadastrar">
 

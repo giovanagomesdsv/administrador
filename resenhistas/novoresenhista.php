@@ -6,7 +6,7 @@
     <title>Cadastro de resenhistas</title>
 </head>
 <body>
-<form action="inserirnovoresenhista.php" method="POST" name="cadastroresenhista">
+<form action="inserirnovoresenhista.php" enctype="multipart/form-data" method="POST" name="cadastroresenhista">
         <h1>CADASTRO DE RESENHISTAS</h1>
         <label for="nome">Nome:</label>
         <input type="text" name="nome">
@@ -17,8 +17,8 @@
         <label for="descricao">Descrição:</label>
         <input type="text" name="descricao">
 
-        <label for="imagem">Foto:</label>
-        <input type="text" name="imagem" placeholder="URL">
+        <label for="arquivo">Selecione uma imagem</label>
+        <input type="file" name="arquivo" >
 
         <label for="endereco">Endereço:</label>
         <input type="text" name="endereco">

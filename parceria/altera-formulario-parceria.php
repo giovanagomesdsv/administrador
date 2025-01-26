@@ -67,9 +67,6 @@ if ($res = mysqli_query($conn, $consulta)) {
             <label for='x'>x:</label>
             <input type='text' name='x' placeholder='URL' value='{$linha["x_social"]}'>
     
-            <label for='imagem'>Foto:</label>
-            <input type='text' name='imagem' placeholder='URL' value='{$linha["foto_url"]}'>
-    
             <input type='submit' value='Atualizar'>
     
             <a href='parcerias.php'>Voltar</a>

@@ -22,7 +22,7 @@ include "../conexao-banco/conexao.php";
         <?php
         $consulta = "SELECT 
     parceria.telefone, 
-    parceria.foto_url, 
+    parceria.path, 
     parceria.nome, 
     parceria.cnpj, 
     parceria.email, 
@@ -35,7 +35,7 @@ ON
     parceria.cnpj = livro.cnpj 
 GROUP BY 
     parceria.telefone, 
-    parceria.foto_url, 
+    parceria.path, 
     parceria.nome, 
     parceria.cnpj,
     parceria.email
@@ -50,7 +50,7 @@ GROUP BY
                 echo "
             <div>
                 <a href=\"https://wa.me/{$registro['telefone']}?text=$mensagem\" target=\"_blank\">
-                    <img style=\"border:1px solid blue;\" src=\"{$registro['foto_url']}\" alt=\"Imagem da Livraria\">
+                    <img style=\"border:1px solid blue;\" src=\"{$registro['path']}\" alt=\"Imagem da Livraria\">
                 </a>
                 <p>{$registro['nome']}</p>
                 <p>{$registro['email']}</p>

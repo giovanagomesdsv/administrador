@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form action="inserirnovaresenha.php" name="cadastroresenhas" method="POST">
+    <form action="inserirnovaresenha.php" enctype="multipart/form-data" name="cadastroresenhas" method="POST">
         <h1>CADASTRO DE RESENHAS</h1>
         <label for="slug-livro">Slug do livro:</label>
         <input type="text" name="slug-livro">
@@ -25,10 +25,8 @@
         <label for="slug">Slug do livro:</label>
         <input type="text" name="slug" placeholder="RESENHA:nome-do-livro-autor" required>
 
-
-        <label for="imagem">Foto:</label>
-        <input type="text" name="imagem" placeholder="URL">
-
+        <label for="arquivo">Imagem da Resenha:</label>
+        <input type="file" name="arquivo" required>
 
         <label for="genero">Gênero:</label>
         <select name="genero" required>
