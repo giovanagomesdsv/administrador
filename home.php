@@ -10,23 +10,69 @@ include "protecao.php";
     <meta name="viewport" content="width=h1, initial-scale=1.0">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/geral.css">
     <title>ADM BC - Home</title>
 </head>
 
 <body>
-    <div class="barra">
-        <h4>Bem Vindo, <?php echo $_SESSION['nome']; ?> </h4>
-    </div>
-    <header>
-        <a href="#">Home</a>
-        <a href="parceria/parcerias.php">Parcerias</a>
-        <a href="resenhistas/resenhistas.php">Resenhistas</a>
-        <a href="autores/autores.php">Autores</a>
-        <a href="livro/livros.php">Livros</a>
-        <a href="resenha/resenhas.php">Resenhas</a>
-        <a href="precificacao/precificacao.php">Precificação</a>
-        <a href="logout.php"><i class='bx bx-log-out'></i></a>
+    <header class="sidebar">
+        <div class="logo">
+            <div class="logo_name">Administrador BC</div>
+            <i class="bx bx-menu"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="#">
+                    <i class='bx bx-home-alt-2'></i>
+                    <span class="link_name">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="parceria/parcerias.php">
+                    <i class='bx bx-user'></i>
+                    <span class="link_name">Parcerias</span>
+                </a>
+            </li>
+            <li>
+                <a href="resenhistas/resenhistas.php">
+                    <i class='bx bx-user-pin'></i>
+                    <span class="link_name">Resenhistas</span>
+                </a>
+            </li>
+            <li>
+                <a href="autores/autores.php">
+                    <i class='bx bx-book-reader'></i>
+                    <span class="link_name">Autores</span>
+                </a>
+            </li>
+            <li>
+                <a href="livro/livros.php">
+                    <i class='bx bx-book-bookmark'></i>
+                    <span class="link_name">Livros</span>
+                </a>
+            </li>
+            <li>
+                <a href="resenha/resenhas.php">
+                    <i class='bx bx-book-content'></i>
+                    <span class="link_name">Resenhas</span>
+                </a>
+            </li>
+            <li>
+                <a href="precificacao/precificacao.php">
+                    <i class='bx bxs-badge-dollar'></i>
+                    <span class="link_name">Precificação</span>
+                </a>
+            </li>
+            <a href="logout.php"><i class='bx bx-log-out'></i></a>
+        </ul>
     </header>
+    <main>
+        <div class="barra">
+            <h4>Bem Vindo, <?php echo $_SESSION['nome']; ?> </h4>
+        </div>
+    </main>
 
 </body>
 
