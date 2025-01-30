@@ -1,6 +1,5 @@
 <?php
 include "protecao.php";
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,9 +16,12 @@ include "protecao.php";
 </head>
 
 <body>
-    <header class="sidebar">
-        <div class="logo">
-            <div class="logo_name">Administrador BC</div>
+    <header>
+        Adiministrador BC
+    </header>
+    <nav class="sidebar">
+        <div class="nome">
+            <div class="logo_name">Bem Vindo, <?php echo $_SESSION['nome']; ?></div>
             <i class="bx bx-menu"></i>
         </div>
         <ul class="nav-list">
@@ -67,10 +69,10 @@ include "protecao.php";
             </li>
             <a href="logout.php"><i class='bx bx-log-out'></i></a>
         </ul>
-    </header>
+    </nav>
     <main>
         <div class="barra">
-            <h4>Bem Vindo, <?php echo $_SESSION['nome']; ?> </h4>
+            <h4> </h4>
         </div>
     </main>
 
