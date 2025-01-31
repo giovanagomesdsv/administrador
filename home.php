@@ -10,23 +10,30 @@ include "protecao.php";
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="geral.css">
+
     <title>ADM BC - Home</title>
 </head>
+<style>
+
+</style>
 
 <body>
     <header>
         Adiministrador BC
     </header>
-    <nav class="sidebar">
+    <nav class="sidebar" id="sidebar"> 
         <div class="nome">
-            <div class="logo_name">Bem Vindo, <?php echo $_SESSION['nome']; ?></div>
-            <i class="bx bx-menu"></i>
+            <div class="logo_name">Bem Vindo, <br> <?php echo $_SESSION['nome']; ?>!</div>
+            <div class="menu" id="menu">
+                <i class="bx bx-menu"></i>
+            </div>
+
         </div>
         <ul class="nav-list">
-            <li>
-                <a href="#">
+            <li class="fix">
+                <a href="home.php">
                     <i class='bx bx-home-alt-2'></i>
                     <span class="link_name">Home</span>
                 </a>
@@ -67,7 +74,9 @@ include "protecao.php";
                     <span class="link_name">Precificação</span>
                 </a>
             </li>
-            <a href="logout.php"><i class='bx bx-log-out'></i></a>
+            <li class="sair">
+                <a href="logout.php"><i class='bx bx-log-out'></i></a>
+            </li>
         </ul>
     </nav>
     <main>
@@ -75,7 +84,7 @@ include "protecao.php";
             <h4> </h4>
         </div>
     </main>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
