@@ -9,6 +9,7 @@
  text-decoration: none;
  list-style-type: none;
  transition: .2s;
+ scroll-behavior: smooth;
 }
 
 :root {
@@ -17,6 +18,20 @@
     --secundaria: #2A4A64;
     --principal: #406E96;
     --terciaria: #1F3A50;
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track{
+    background: var(--terciaria);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--hover-color);
+    border-radius: .5rem;
 }
 
 body {
@@ -68,7 +83,7 @@ header {
 
 
 .sidebar ul li {
-    margin-top: 1.5rem;
+    margin-top: .5rem;
     width: 100%;
 }
 .sidebar ul li a .link_name{
@@ -106,9 +121,10 @@ header {
     justify-content: center;
     height: 2.5rem;
     border-radius: 50%;
-    margin-left: 50%;
+    margin: 40% 0 0 50%;
     transition: .2s;
 }
 .sidebar.abrir .sair:hover{
     background-color: #406E96;
 }
+
