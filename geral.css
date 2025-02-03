@@ -30,7 +30,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--hover-color);
+    background: var(--text);
     border-radius: .5rem;
 }
 
@@ -83,7 +83,7 @@ header {
 
 
 .sidebar ul li {
-    margin-top: .5rem;
+    margin-top: 1.3rem;
     width: 100%;
 }
 .sidebar ul li a .link_name{
@@ -128,3 +128,6 @@ header {
     background-color: #406E96;
 }
 
+.sidebar.abrir ul li {
+    margin-top: 1rem;
+}
