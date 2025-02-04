@@ -14,7 +14,6 @@ if (isset($_FILES['arquivo'])) {
     if ($arquivo['size'] > 2097152) 
         die("Arquivo muito grande! Max: 2MB");
 
-        $pasta = "img-autores/";
 
         $nomeDoArquivo = $arquivo['name'];
         $novoNomeDoArquivo = uniqid();
@@ -23,7 +22,7 @@ if (isset($_FILES['arquivo'])) {
     if($extensao != "jpg" && $extensao != 'png')
        die("Tipo de arquivo não aceito!");
 
-       $path = $pasta . $novoNomeDoArquivo . "." . $extensao;
+       $path =  $novoNomeDoArquivo . "." . $extensao;
 
        $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
 }
