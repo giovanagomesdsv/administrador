@@ -28,13 +28,16 @@ if (isset($_FILES['arquivo'])) {
         $nomeDoArquivo = $arquivo['name'];
         $novoNomeDoArquivo = uniqid();
         $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
+        $pasta = "img-parceria/";
 
     if($extensao != "jpg" && $extensao != 'png')
        die("Tipo de arquivo não aceito!");
 
        $path =  $novoNomeDoArquivo . "." . $extensao;
 
-       $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
+       $caminho =  $pasta . $novoNomeDoArquivo . "." . $extensao;
+
+       $deu_certo = move_uploaded_file($arquivo["tmp_name"],  $caminho);
 }
 
 $sql_code = "INSERT INTO parceria (cnpj, rg, usuario, senha, nome, endereco, cidade, estado, telefone, email, instagram, tiktok, x_social, path) VALUES ('$cnpj', '$rg', '$usuario', '$senha', '$nome', '$endereco', '$cidade', '$estado', '$telefone', '$email', '$instagram', '$tiktok', '$x_social', '$path')";

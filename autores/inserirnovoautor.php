@@ -18,13 +18,15 @@ if (isset($_FILES['arquivo'])) {
         $nomeDoArquivo = $arquivo['name'];
         $novoNomeDoArquivo = uniqid();
         $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
+        $pasta = "img-autores/";
 
     if($extensao != "jpg" && $extensao != 'png')
        die("Tipo de arquivo não aceito!");
 
        $path =  $novoNomeDoArquivo . "." . $extensao;
+       $caminho = $pasta . $novoNomeDoArquivo . "." . $extensao;
 
-       $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
+       $deu_certo = move_uploaded_file($arquivo["tmp_name"],  $caminho);
 }
 
 $sql_code = "INSERT INTO escritor ( slug, nome, biografia, path) VALUES ( '$slug', '$nome', '$biografia', '$path')";
