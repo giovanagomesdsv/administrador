@@ -19,7 +19,6 @@ include "protecao.php";
 <style>
 
 </style>
-<h1>teste hjh</h1>
 <body>
     <header>
         Adiministrador BC

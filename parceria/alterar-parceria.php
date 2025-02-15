@@ -12,13 +12,11 @@ $estado = $_POST['estado'];
 $telefone = $_POST['telefone'];
 $email = $_POST['email'];
 $instagram = $_POST['instagram'];
-$tiktok = $_POST['tiktok'];
-$x_social  = $_POST['x'];
 
 // pegando passado por parâmetro
 $dado = $_GET['id'];
 
-$alteracao = "UPDATE parceria SET cnpj='$cnpj', rg='$rg', usuario='$usuario', senha='$senha', nome='$nome', endereco='$endereco', cidade='$cidade', estado='$estado', telefone='$telefone', email='$email', instagram='$instagram', tiktok='$tiktok', x_social='$x_social' WHERE cnpj='$dado'";
+$alteracao = "UPDATE parceria SET cnpj='$cnpj', rg='$rg', usuario='$usuario', senha='$senha', nome='$nome', endereco='$endereco', cidade='$cidade', estado='$estado', telefone='$telefone', email='$email', instagram='$instagram', tiktok='$tiktok' WHERE cnpj='$dado'";
 
 if ($resultado = mysqli_query($conn, $alteracao)) {
     echo '

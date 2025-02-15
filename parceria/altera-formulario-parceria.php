@@ -64,9 +64,6 @@ if ($res = mysqli_query($conn, $consulta)) {
             <label for='tiktok'>Tik Tok:</label>
             <input type='text' name='tiktok' placeholder='URL' value='{$linha["tiktok"]}'>
     
-            <label for='x'>x:</label>
-            <input type='text' name='x' placeholder='URL' value='{$linha["x_social"]}'>
-    
             <input type='submit' value='Atualizar'>
     
             <a href='parcerias.php'>Voltar</a>
