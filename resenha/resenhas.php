@@ -82,7 +82,7 @@ include "../protecao.php";
     </div>
     <div>
         <?php
-        $select = "SELECT resenha.id_resenha, resenha.data_publicacao, resenha.titulo, resenha.genero, resenha.visualizacao, autor_resenha.pseudonimo FROM resenha INNER JOIN autor_resenha ON resenha.id_autor_resenha = autor_resenha.id_autor_resenha ORDER BY data_publicacao desc";
+        $select = "SELECT resenha.id_resenha, resenha.data_publicacao, resenha.titulo, resenha.genero,  autor_resenha.pseudonimo FROM resenha INNER JOIN autor_resenha ON resenha.id_autor_resenha = autor_resenha.id_autor_resenha ORDER BY data_publicacao desc";
 
         if ($resp = mysqli_query($conn, $select)) {
             echo "<div>
@@ -105,7 +105,6 @@ include "../protecao.php";
                         <td>{$linha['titulo']}</td>
                          <td>{$linha['pseudonimo']}</td>
                         <td>{$linha['genero']}</td>
-                        <td>{$linha['visualizacao']}</td>
                         <td><a href='atualiza-formulario-resenha.php?id={$linha['id_resenha']}'>
                            <div class='bx bxs-edit-alt'></div>
                         </a></td>

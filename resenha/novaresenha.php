@@ -10,8 +10,6 @@
 <body>
     <form action="inserirnovaresenha.php" enctype="multipart/form-data" name="cadastroresenhas" method="POST">
         <h1>CADASTRO DE RESENHAS</h1>
-        <label for="slug-livro">Slug do livro:</label>
-        <input type="text" name="slug-livro">
 
         <label for="autor">Autor:</label>
         <input type="text" name="autor">
@@ -21,9 +19,6 @@
 
         <label for="resenha">Título da resenha:</label>
         <input type="text" name="resenha" placeholder="RESENHA: nome do livro - autor">
-
-        <label for="slug">Slug do livro:</label>
-        <input type="text" name="slug" placeholder="RESENHA:nome-do-livro-autor" required>
 
         <label for="arquivo">Imagem da Resenha:</label>
         <input type="file" name="arquivo" required>
