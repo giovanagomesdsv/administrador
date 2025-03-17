@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email']) && isset($_P
         echo "Preencha sua senha.";
     } else {
   
-        $sql_code = "SELECT * FROM usuarios WHERE usu_email = ?";
+        $sql_code = "SELECT * FROM usuarios WHERE usu_email = ? AND usu_tipo_usuario = 2";
         $stmt = $conn->prepare($sql_code);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email']) && isset($_P
                 echo "Falha ao logar! Senha incorreta.";
             }
         } else {
-            echo "Falha ao logar! E-mail incorreto.";
+            echo "Falha ao logar! E-mail incorreto ou usuário não autorizado.";
         }
 
         $stmt->close();
