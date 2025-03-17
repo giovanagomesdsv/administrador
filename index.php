@@ -1,38 +1,30 @@
 <?php
+session_start();
 include "conexao-banco/conexao.php";
 
-if (isset($_POST['passe']) && isset($_POST['usuario']) && isset($_POST['senha'])) {
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email']) && isset($_POST['senha'])) {
+    
+    $email = trim($_POST['email']);
+    $senha = trim($_POST['senha']);
 
-    if (strlen($_POST['usuario']) == 0) {
-        echo "Preencha seu usuário";
-    } else if (strlen($_POST['passe']) == 0) {
-        echo "Preencha seu passe";
-    } else if (strlen($_POST['senha']) == 0) {
-        echo "Preencha sua senha";
+    if (empty($email)) {
+        echo "Preencha seu e-mail.";
+    } elseif (empty($senha)) {
+        echo "Preencha sua senha.";
     } else {
-        $passe = $conn->real_escape_string($_POST['passe']);
-        $usuario = $conn->real_escape_string($_POST['usuario']);
-        $senha = $_POST['senha'];
+        // Consulta segura usando Prepared Statements
+        $sql_code = "SELECT * FROM usuarios WHERE usu_email = ?";
+        $stmt = $conn->prepare($sql_code);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        // Consulta SQL
-        $sql_code = "SELECT * FROM parceria WHERE rg = '$passe' AND usuario = '$usuario'";
-        $sql_query = $conn->query($sql_code) or die("Falha na consulta: " . $conn->error);
+        if ($result->num_rows === 1) {
+            $usuario_db = $result->fetch_assoc();
 
-        if ($sql_query->num_rows == 1) {
-            $usuario_db = $sql_query->fetch_assoc();
-
-            // Debug para verificar senha
-            // echo "Senha no banco: {$usuario_db['senha']}<br>";
-            // echo "Senha enviada: $senha";
-
-            if (password_verify($senha, $usuario_db['senha'])) {
-                if (!isset($_SESSION)) {
-                    session_start();
-                }
-
-                $_SESSION['rg'] = $usuario_db['rg'];
-                $_SESSION['usuario'] = $usuario_db['usuario'];
-                $_SESSION['nome'] = $usuario_db['nome'];
+            if (password_verify($senha, $usuario_db['usu_senha'])) {
+                $_SESSION['id'] = $usuario_db['usu_id'];
+                $_SESSION['nome'] = $usuario_db['usu_nome'];
 
                 header("Location: home.php");
                 exit();
@@ -40,13 +32,13 @@ if (isset($_POST['passe']) && isset($_POST['usuario']) && isset($_POST['senha'])
                 echo "Falha ao logar! Senha incorreta.";
             }
         } else {
-            echo "Falha ao logar! Passe ou usuário incorretos.";
+            echo "Falha ao logar! E-mail incorreto.";
         }
+
+        $stmt->close();
     }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,9 +56,9 @@ if (isset($_POST['passe']) && isset($_POST['usuario']) && isset($_POST['senha'])
     <div class="form-container sign-in">
         <form action="" method="POST" name="form1">
             <h1>Entrar</h1>
-            <input type="text" name="passe" placeholder="Passe">
-            <input type="text" name="usuario" placeholder="Usuário">
+            <input type="text" name="email" placeholder="E-mail">
             <input type="password" name="senha" placeholder="Senha">
+            <a href="" style="color: #fff">Esqueci a senha</a>
             <button class="btn">Entrar</button>
         </form>
     </div>
