@@ -30,7 +30,9 @@ include "conexao-banco/conexao.php";
             <div class="menu" id="menu">
                 <i class="bx bx-menu"></i>
             </div>
-
+               <div class="linhavaliar">
+                <h1>AVALIAR</h1>
+               </div>
         </div>
         <ul class="nav-list">
             <li class="fix">
@@ -113,8 +115,7 @@ include "conexao-banco/conexao.php";
     </main>
     
     <script src="script.js"></script>
-<h1>teste</h1>
-<h1>teste</h1>
+
 </body>
 
 </html>
