@@ -1,0 +1,27 @@
+<?php
+include "../conexao-banco/conexao.php";
+    $email = $_POST['email'];
+    $nome = $_POST['nome'];
+    $senha = $_POST['senha'];
+    $usuario = $_POST['usuario'];
+
+    $sql_code = "INSERT INTO USUARIOS ( usu_nome, usu_email, usu_senha, usu_tipo_usuario) VALUES (' $nome', '$email',  '$senha',  '$usuario')";
+
+
+if (mysqli_query($conn, $sql_code)) {
+    echo '
+    <script>
+         window.alert("Dados inseridos com sucesso!");
+         location.href="usuario.php";
+    </script>
+    ';
+} else {
+    echo '
+    <script>
+         window.alert("Erro na inserção!");
+         location.href="cadastrarusuario.php";
+    </script>
+    ';
+};
+
+?>
