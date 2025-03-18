@@ -21,3 +21,9 @@ img {
     z-index: -2; /*envia para tras da imagem*/
     top: -30%;
 }
+
+.linhavaliar{
+    text-align: center;
+    font-size: 90rem;
+    
+}

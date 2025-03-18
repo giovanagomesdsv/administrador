@@ -31,7 +31,7 @@ include "conexao-banco/conexao.php";
                 <i class="bx bx-menu"></i>
             </div>
                <div class="linhavaliar">
-                <h1>AVALIAR</h1>
+                <p>AVALIAR</p>
                </div>
         </div>
         <ul class="nav-list">
