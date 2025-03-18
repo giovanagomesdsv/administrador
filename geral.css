@@ -33,8 +33,9 @@
     background: var(--text);
     border-radius: .5rem;
 }
-
-
+body {
+    background-color: #8dccff;
+}
 header {
     display: flex;
     align-items: center;

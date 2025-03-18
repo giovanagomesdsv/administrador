@@ -31,13 +31,13 @@ include "../protecao.php";
         </div>
         <ul class="nav-list">
             <li >
-                <a href="home.php">
+                <a href="../home.php">
                     <i class='bx bx-home-alt-2'></i>
                     <span class="link_name">Home</span>
                 </a>
             </li>
             <li>
-                <a href="livrarias/livrarias.php">
+                <a href="../livrarias/livrarias.php">
                     <i class='bx bx-user'></i>
                     <span class="link_name">Livrarias</span>
                 </a>
@@ -49,19 +49,19 @@ include "../protecao.php";
                 </a>
             </li>
             <li class="fix">
-                <a href="livro/livros.php">
+                <a href="livros.php">
                     <i class='bx bx-book-bookmark'></i>
                     <span class="link_name">Livros</span>
                 </a>
             </li>
             <li>
-                <a href="usuarios/usuarios.php">
+                <a href="../usuarios/usuarios.php">
                     <i class='bx bx-book-content'></i>
                     <span class="link_name">Usuarios</span>
                 </a>
             </li>
             <li class="sair">
-                <a href="logout.php"><i class='bx bx-log-out'></i></a>
+                <a href="../logout.php"><i class='bx bx-log-out'></i></a>
             </li>
         </ul>
     </nav>
