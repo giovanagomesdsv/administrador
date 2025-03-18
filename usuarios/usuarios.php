@@ -100,7 +100,7 @@ include "../protecao.php";
                         <div>
                          <p>Usuário: {$row['usu_nome']}</p>
                          <p>Id: {$row['usu_id']}</p>
-                         <a href='altera-formulario-parceria.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
+                          <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
                        </div>
                      ";
                     }
@@ -119,7 +119,7 @@ include "../protecao.php";
                        <div>
                          <p>Usuário: {$row['usu_nome']}</p>
                          <p>Id: {$row['usu_id']}</p>
-                         <a href='altera-formulario-parceria.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
+                         <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
                        </div>
                     ";
                 }
