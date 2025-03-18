@@ -13,8 +13,6 @@ include "conexao-banco/conexao.php";
 // Executa o comando
 if ($stmt->execute()) {
     echo "<script>alert('Avaliado com sucesso!'); window.location.href = 'home.php';</script>";
-} else {
-    echo "<script>alert('Erro ao atualizar o livro: {$stmt->error}'); window.history.back();</script>";
 }
 
 ?>
