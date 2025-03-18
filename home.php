@@ -87,7 +87,7 @@ include "conexao-banco/conexao.php";
             if ($result = mysqli_query($conn, $sql)) {
                 while ($resposta = mysqli_fetch_array($result)) {
                     echo "
-                    <div>
+    <div>
 
         <div>
             <img src='' alt=''>
