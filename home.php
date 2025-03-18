@@ -42,9 +42,9 @@ include "conexao-banco/conexao.php";
                 </a>
             </li>
             <li>
-                <a href="parceria/parcerias.php">
+                <a href="livrarias/livrarias.php">
                     <i class='bx bx-user'></i>
-                    <span class="link_name">Parcerias</span>
+                    <span class="link_name">Livrarias</span>
                 </a>
             </li>
             <li>
@@ -54,27 +54,15 @@ include "conexao-banco/conexao.php";
                 </a>
             </li>
             <li>
-                <a href="autores/autores.php">
-                    <i class='bx bx-book-reader'></i>
-                    <span class="link_name">Autores</span>
-                </a>
-            </li>
-            <li>
                 <a href="livro/livros.php">
                     <i class='bx bx-book-bookmark'></i>
                     <span class="link_name">Livros</span>
                 </a>
             </li>
             <li>
-                <a href="resenha/resenhas.php">
+                <a href="usuarios/usuarios.php">
                     <i class='bx bx-book-content'></i>
-                    <span class="link_name">Resenhas</span>
-                </a>
-            </li>
-            <li>
-                <a href="precificacao/precificacao.php">
-                    <i class='bx bxs-badge-dollar'></i>
-                    <span class="link_name">Precificação</span>
+                    <span class="link_name">Usuarios</span>
                 </a>
             </li>
             <li class="sair">
