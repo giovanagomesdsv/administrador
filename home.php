@@ -114,6 +114,7 @@ include "conexao-banco/conexao.php";
     
     <script src="script.js"></script>
 <h1>teste</h1>
+<h1>teste</h1>
 </body>
 
 </html>
