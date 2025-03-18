@@ -81,8 +81,9 @@ include "conexao-banco/conexao.php";
         </ul>
     </nav>
     <main>
-        <?php
-            $sql = 'SELECT * FROM RESENHAS WHERE resenha_status = 0';
+        <div>
+           <?php
+            $sql = 'SELECT resenha_titulo, resenha_foto, res_nome_fantasia FROM RESENHAS INNER JOIN RESENHISTAS ON resenhistas.res_id = resenhas.res_id WHERE resenha_status = 0';
 
             if ($result = mysqli_query($conn, $sql)) {
                 while ($resposta = mysqli_fetch_array($result)) {
@@ -90,22 +91,27 @@ include "conexao-banco/conexao.php";
     <div>
 
         <div>
-            <img src='' alt=''>
+            <img src='../administrador/imagens/resenhas/{$resposta['resenha_foto']}' alt=''>
         </div>
         <div>
             <p>{$resposta['resenha_titulo']}</p>
-            <p></p>
+            <p>{$resposta['res_nome_fantasia']}</p>
         </div>
         <div>
-            <button></button>
+          <a href='avaliar.php'>
+            <button>Avaliar</button>
+          </a>
         </div>
     </div>
                     ";
                 }
             }
 
-        ?>
+             ?>
+        </div>
+     
     </main>
+    
     <script src="script.js"></script>
 
     
