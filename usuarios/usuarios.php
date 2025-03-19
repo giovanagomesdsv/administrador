@@ -19,7 +19,7 @@ include "../protecao.php";
 <header>
         Adiministrador BC
     </header>
-    <nav class="sidebar" id="sidebar"> 
+  <!--  <nav class="sidebar" id="sidebar"> 
         <div class="nome">
             <div class="logo_name"> <?php echo $_SESSION['nome']; ?></div>
             <div class="menu" id="menu">
@@ -64,7 +64,7 @@ include "../protecao.php";
                 <a href="../logout.php"><i class='bx bx-log-out'></i></a>
             </li>
         </ul>
-    </nav>
+    </nav>-->
     
     <main>
 <!--Botão de cadastro de usuário-->
