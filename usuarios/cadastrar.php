@@ -12,7 +12,7 @@ if (mysqli_query($conn, $sql_code)) {
     echo '
     <script>
          window.alert("Dados inseridos com sucesso!");
-         location.href="usuario.php";
+         location.href="usuarios.php";
     </script>
     ';
 } else {

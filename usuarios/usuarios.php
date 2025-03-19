@@ -19,6 +19,52 @@ include "../protecao.php";
 <header>
         Adiministrador BC
     </header>
+    <nav class="sidebar" id="sidebar"> 
+        <div class="nome">
+            <div class="logo_name"> <?php echo $_SESSION['nome']; ?></div>
+            <div class="menu" id="menu">
+                <i class="bx bx-menu"></i>
+            </div>
+               <div class="linhavaliar">
+                <p>AVALIAR</p>
+               </div>
+        </div>
+        <ul class="nav-list">
+            <li >
+                <a href="../home.php">
+                    <i class='bx bx-home-alt-2'></i>
+                    <span class="link_name">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="../livrarias/livrarias.php">
+                    <i class='bx bx-user'></i>
+                    <span class="link_name">Livrarias</span>
+                </a>
+            </li>
+            <li>
+                <a href="../resenhistas/resenhistas.php">
+                    <i class='bx bx-user-pin'></i>
+                    <span class="link_name">Resenhistas</span>
+                </a>
+            </li>
+            <li>
+                <a href="../livro/livros.php">
+                    <i class='bx bx-book-bookmark'></i>
+                    <span class="link_name">Livros</span>
+                </a>
+            </li>
+            <li class="fix">
+                <a href="usuarios.php">
+                    <i class='bx bx-book-content'></i>
+                    <span class="link_name">Usuarios</span>
+                </a>
+            </li>
+            <li class="sair">
+                <a href="../logout.php"><i class='bx bx-log-out'></i></a>
+            </li>
+        </ul>
+    </nav>
     
     <main>
 <!--Botão de cadastro de usuário-->
@@ -66,10 +112,20 @@ include "../protecao.php";
 
         <div>
             <?php
-              $consulta = "SELECT usu_nome, usu_id FROM usuarios ";  
+              $consulta = "SELECT usu_nome, usu_id, usu_status FROM usuarios ";  
 
               if ($card = mysqli_query($conn, $consulta)) {
                 while ($row = mysqli_fetch_array($card)) {
+
+                    if ($row['usu_status'] == 0) {
+                        echo "
+                        <div style='background-color: rgba(53, 50, 52, .5);'>
+                          <p>Usuário: {$row['usu_nome']}</p>
+                          <p>Id: {$row['usu_id']}</p>
+                          <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
+                        </div>
+                     ";
+                    }
                     echo "
                        <div>
                          <p>Usuário: {$row['usu_nome']}</p>
@@ -82,10 +138,8 @@ include "../protecao.php";
             ?>
         </div>
 
-        <div>
-            <p>Usuário: </p>
-            <p>Id: </p>
-        </div>
+        
+
 
     </main>
    
