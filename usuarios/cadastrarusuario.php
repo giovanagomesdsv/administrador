@@ -24,7 +24,7 @@
             <option value="1">Livraria</option>
             <option value="0">Resenhista</option>
         </select>
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Cadastrar usuário">
     </form>
 </body>
 </html>
