@@ -74,8 +74,8 @@ include "conexao-banco/conexao.php";
 <!--começo do corpo da página-->
     <main>
         
-        <div>
-         <h3>Olá, <?php echo $_SESSION['nome']; ?>, <br> Seja bem-vindo!</h3> 
+        <div class="titulo">
+          <h3>Olá, <?php echo $_SESSION['nome']; ?>, <br> Seja bem-vindo!</h3> 
         </div>
 
         <div class="avaliar">
@@ -85,7 +85,7 @@ include "conexao-banco/conexao.php";
             if ($result = mysqli_query($conn, $sql)) {
                 while ($resposta = mysqli_fetch_array($result)) {
                     echo "
-    <div>
+    <div class="card">
         <div>
             <img src='../administrador/imagens/livros/{$resposta['livro_foto']}' alt=''>
         </div>
@@ -105,7 +105,7 @@ include "conexao-banco/conexao.php";
 
              ?>
         </div>
-       
+        <p>lorem</p>
      
     </main>
     
