@@ -36,6 +36,8 @@
 body {
     background-color: #8dccff;
 }
+
+/* header bc administrador*/
 header {
     display: flex;
     align-items: center;

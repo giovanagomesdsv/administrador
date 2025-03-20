@@ -3,26 +3,7 @@ main {
     width: 80%;
     margin: 0 10%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
     position: relative;
-}
-img {
-    width: 60%;
-    margin: 2% 20% 0;
-    border-radius: 50%;
-    z-index: -1;
-}
-
-.liquid-shape {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -2; /*envia para tras da imagem*/
-    top: -30%;
-}
-
-.linhavaliar{
-    color:#000;
-    font-size: 10px;
 }
