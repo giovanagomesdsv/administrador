@@ -21,7 +21,17 @@
     font-size: 2rem;
 }
 
+.linhavaliar{
+    margin-top: 2rem;
+    font-size: 2rem;
+    text-decoration: underline ;
+   
 
+   
+    border:solid;
+    border-color: #096;
+
+}
 .avaliar {
     position: relative;
     border: 1px solid red;
