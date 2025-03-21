@@ -19,7 +19,7 @@ include "../protecao.php";
 <header>
         Adiministrador BC
     </header>
-  <!--  <nav class="sidebar" id="sidebar"> 
+   <nav class="sidebar" id="sidebar"> 
         <div class="nome">
             <div class="logo_name"> <?php echo $_SESSION['nome']; ?></div>
             <div class="menu" id="menu">
@@ -64,7 +64,7 @@ include "../protecao.php";
                 <a href="../logout.php"><i class='bx bx-log-out'></i></a>
             </li>
         </ul>
-    </nav>-->
+    </nav>
     
     <main>
 <!--Botão de cadastro de usuário-->
@@ -97,22 +97,34 @@ include "../protecao.php";
                     echo "<div class='resultados'><h3>Nenhum resultado encontrado!</h3></div>";
                 } else {
                     while ($dados = $sql_query->fetch_assoc()) {
+                       
+                        if ($row['usu_status'] == 0) {
+                            echo "
+                            <div style='background-color: rgba(53, 50, 52, .5);'>
+                              <p>Usuário: {$dados['usu_nome']}</p>
+                              <p>Id: {$dados['usu_id']}</p>
+                              <a href='editarusuario.php?id={$dados['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
+                            </div>
+                         ";
+                        }
                         echo "
-                        <div>
-                         <p>Usuário: {$row['usu_nome']}</p>
-                         <p>Id: {$row['usu_id']}</p>
-                          <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
-                       </div>
-                     ";
+                           <div>
+                             <p>Usuário: {$dados['usu_nome']}</p>
+                             <p>Id: {$dados['usu_id']}</p>
+                             <a href='editarusuario.php?id={$dados['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
+                           </div>
+                        ";
+                    }
+
                     }
                 }
-            }
             ?>
         </div>
 
+            <!--CARD DOS USUÁRIOS-->
         <div>
             <?php
-              $consulta = "SELECT usu_nome, usu_id, usu_status FROM usuarios ";  
+              $consulta = "SELECT usu_nome, usu_id, usu_status, usu_tipo_usuario FROM usuarios ";  
 
               if ($card = mysqli_query($conn, $consulta)) {
                 while ($row = mysqli_fetch_array($card)) {
@@ -121,20 +133,47 @@ include "../protecao.php";
                         echo "
                         <div style='background-color: rgba(53, 50, 52, .5);'>
                           <p>Usuário: {$row['usu_nome']}</p>
-                          <p>Id: {$row['usu_id']}</p>
-                          <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
+                          <p>Id: {$row['usu_id']}</p>";
+
+                          if ($row['usu_tipo_usuario'] == 0) {
+                            echo "<p>RESENHISTA</p>";
+                          } 
+                          else if ($row['usu_tipo_usuario'] == 1) {
+                           echo" <p>LIVRARIA</p>";
+                          } 
+                          else  {
+                            echo "<p>ADMINISTRADOR</p>";
+                          } 
+
+                         echo " <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
+                        </div>
+                     ";
+                    } else {
+                        
+                        echo "
+                        <div style='background-color: rgba(53, 50, 52, .5);'>
+                          <p>Usuário: {$row['usu_nome']}</p>
+                          <p>Id: {$row['usu_id']}</p>";
+
+                          if ($row['usu_tipo_usuario'] == 0) {
+                            echo "<p>RESENHISTA</p>";
+                          } 
+                          else if ($row['usu_tipo_usuario'] == 1) {
+                           echo" <p>LIVRARIA</p>";
+                          } 
+                          else  {
+                            echo "<p>ADMINISTRADOR</p>";
+                          } 
+
+                         echo " <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
                         </div>
                      ";
                     }
-                    echo "
-                       <div>
-                         <p>Usuário: {$row['usu_nome']}</p>
-                         <p>Id: {$row['usu_id']}</p>
-                         <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
-                       </div>
-                    ";
-                }
+                   
               }
+
+            }
+             
             ?>
         </div>
 

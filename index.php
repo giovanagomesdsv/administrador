@@ -1,25 +1,5 @@
 <?php
 /*
-session_start();
-include "conexao-banco/conexao.php";
-
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email']) && isset($_POST['senha'])) {
-    
-    $email = trim($_POST['email']);
-    $senha = trim($_POST['senha']);
-
-    if (empty($email)) {
-        echo "Preencha seu e-mail.";
-    } elseif (empty($senha)) {
-        echo "Preencha sua senha.";
-    } else {
-        // Consulta segura usando Prepared Statements
-        $sql_code = "SELECT * FROM usuarios WHERE usu_email = ?";
-        $stmt = $conn->prepare($sql_code);
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
         if ($result->num_rows === 1) {
             $usuario_db = $result->fetch_assoc();
 
@@ -35,10 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email']) && isset($_P
         } else {
             echo "Falha ao logar! E-mail incorreto.";
         }
-
-        $stmt->close();
-    }
-}
 */
 session_start();
 include "conexao-banco/conexao.php";
@@ -54,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email']) && isset($_P
         echo "Preencha sua senha.";
     } else {
   
-        $sql_code = "SELECT * FROM usuarios WHERE usu_email = ? AND usu_tipo_usuario = 2";
+        $sql_code = "SELECT * FROM usuarios WHERE usu_email = ? AND usu_tipo_usuario = 2 AND usu_status = 1";
         $stmt = $conn->prepare($sql_code);
         $stmt->bind_param("s", $email);
         $stmt->execute();
