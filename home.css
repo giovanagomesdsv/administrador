@@ -7,7 +7,6 @@
 }
 
 
-<<<<<<< Updated upstream
 .titulo {
     background-color: var(--principal);
     display: flex;
@@ -22,14 +21,10 @@
     font-size: 2rem;
 }
 
+
 .avaliar {
     position: relative;
     border: 1px solid red;
     margin-top: 3rem;
 }
 
-=======
-.linhavaliar{
-    
-}
->>>>>>> Stashed changes
