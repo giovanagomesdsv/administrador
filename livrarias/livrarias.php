@@ -104,7 +104,7 @@ LEFT JOIN
     livrarias_livros
 ON 
     livrarias.liv_id =  livrarias_livros.liv_id
-    liv_nome LIKE '%$pesquisa%'";
+   WHERE liv_nome LIKE '%$pesquisa%'";
     // PAREI AQUI
                 $sql_query = $conn->query($sql_code) or die("Erro ao consultar: " . $conn->error);
 
