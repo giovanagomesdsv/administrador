@@ -30,7 +30,9 @@ include "conexao-banco/conexao.php";
             <div class="menu" id="menu">
                 <i class="bx bx-menu"></i>
             </div>
-              
+               <div class="linhavaliar">
+                <p>AVALIAR</p>
+               </div>
         </div>
         <ul class="nav-list">
             <li class="fix">
@@ -75,9 +77,7 @@ include "conexao-banco/conexao.php";
         <div class="titulo">
           <h3>Olá, <?php echo $_SESSION['nome']; ?>, <br> Seja bem-vindo!</h3> 
         </div>
-        <div class="linhavaliar">
-            <p>AVALIAR</p>
-           </div>
+
         <div class="avaliar">
            <?php
             $sql = 'SELECT resenha_titulo, res_nome_fantasia, resenha_id, livro_foto FROM RESENHAS INNER JOIN RESENHISTAS ON resenhistas.res_id = resenhas.res_id INNER JOIN LIVROS ON resenhas.livro_id = livroS.livro_id WHERE resenha_status = 0';
@@ -85,7 +85,7 @@ include "conexao-banco/conexao.php";
             if ($result = mysqli_query($conn, $sql)) {
                 while ($resposta = mysqli_fetch_array($result)) {
                     echo "
-    <div class="card">
+    <div class='card'>
         <div>
             <img src='../administrador/imagens/livros/{$resposta['livro_foto']}' alt=''>
         </div>

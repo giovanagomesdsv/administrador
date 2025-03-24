@@ -6,6 +6,9 @@
     --terciaria: #1F3A50;
 }
 
+.space {
+    justify-content:space-around;
+}
 
 .titulo {
     background-color: var(--principal);
@@ -17,20 +20,19 @@
     height: 8rem;
     margin-top: 2rem;
 }
+
 .titulo h3 {
     font-size: 2rem;
 }
 
-.linhavaliar{
-    margin-top: 2rem;
-    font-size: 2rem;
-    text-decoration: underline ;
-   
-
-}
-.avaliar {
-    position: relative;
-    border: 1px solid red;
-    margin-top: 3rem;
+.BtnCadastrar {
+    background-color:#2A4A64;
+    width:300px;
+    height:100px;
+    margin-top:200px;
 }
 
+.LinkCentrado {
+    margin-left: 30%;
+    margin-top:30%;
+}

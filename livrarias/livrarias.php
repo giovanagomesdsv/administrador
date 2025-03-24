@@ -24,7 +24,7 @@ include "../protecao.php";
     <header>
         Adiministrador BC
     </header>
-    <nav class="sidebar" id="sidebar"> 
+ <!--   <nav class="sidebar" id="sidebar"> 
         <div class="nome">
             <div class="logo_name">Bem Vindo, <br> <?php echo $_SESSION['nome']; ?>!</div>
             <div class="menu" id="menu">
@@ -69,32 +69,28 @@ include "../protecao.php";
                 <a href="../logout.php"><i class='bx bx-log-out'></i></a>
             </li>
         </ul>
-    </nav>
+    </nav>-->
 
+<!--CADASTRAR LIVRARIA-->
     <div>
         <a href="cadastrarlivraria.php">Cadastrar livraria</a>
     </div>
+
+<!--EXIBE OS CARDS DAS LIVRARIAS-->
     <div>
         <?php
         $consulta = "SELECT 
-    parceria.telefone, 
-    parceria.path, 
-    parceria.nome, 
-    parceria.cnpj, 
-    parceria.email, 
-    COUNT(livro.cnpj) AS total_livros 
+    liv_nome,liv_cidade,liv_estado,liv_endereco, liv_email,liv_foto, liv_telefone, livrarias.liv_id,
+    COUNT(livrarias_livros.liv_livro_id) AS total_livros 
 FROM 
-    parceria 
+    livrarias
 LEFT JOIN 
-    livro 
+    livrarias_livros
 ON 
-    parceria.cnpj = livro.cnpj 
+    livrarias.liv_id =  livrarias_livros.liv_id
 GROUP BY 
-    parceria.telefone, 
-    parceria.path, 
-    parceria.nome, 
-    parceria.cnpj,
-    parceria.email
+    liv_nome,liv_cidade,liv_estado,liv_endereco, liv_email,liv_foto
+
 ";
 
         if ($resp_consulta = mysqli_query($conn, $consulta)) {
@@ -105,13 +101,13 @@ GROUP BY
 
                 echo "
             <div>
-                <a href=\"https://wa.me/{$registro['telefone']}?text=$mensagem\" target=\"_blank\">
+                <a href=\"https://wa.me/{$registro['liv_telefone']}?text=$mensagem\" target=\"_blank\">
                     <img style=\"border:1px solid blue;\" src=\"{$registro['path']}\" alt=\"Imagem da Livraria\">
                 </a>
-                <p>{$registro['nome']}</p>
-                <p>{$registro['email']}</p>
+                <p>{$registro['liv_nome']}</p>
+                <p>{$registro['liv_email']}</p>
                 <div>{$registro['total_livros']}</div>
-                  <a href='altera-formulario-parceria.php?id={$registro['cnpj']}'><div class=\"bx bxs-edit-alt\"></div></a>
+                  <a href='altera-formulario-parceria.php?id={$registro['liv_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
             </div>
             ";
             }
@@ -124,7 +120,7 @@ GROUP BY
             </form>
         </div>
 
-        <div class="tabela-parceria">
+        <div class="pesquisa">
             <?php
             if (!isset($_GET['busca']) || empty($_GET['busca'])) {
                 echo "<div class='resultados'></div>";

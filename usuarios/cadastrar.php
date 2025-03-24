@@ -2,6 +2,7 @@
 include "../conexao-banco/conexao.php";
     $email = $_POST['email'];
     $nome = $_POST['nome'];
+   /* $senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);*/
     $senha = $_POST['senha'];
     $usuario = $_POST['usuario'];
 
