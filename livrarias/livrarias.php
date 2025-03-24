@@ -115,14 +115,15 @@ ON
                     while ($dados = $sql_query->fetch_assoc()) {
                          echo "
             <div>
-                <a href=\"https://wa.me/{$registro['liv_telefone']}?text=$mensagem\" target=\"_blank\">
-                  <img src=\"../imagens/livrarias/{$registro['liv_foto']}\" alt=\"Logo da livraria\">
+                <a href=\"https://wa.me/{$dados['liv_telefone']}?text=$mensagem\" target=\"_blank\">
+                  <img src=\"../imagens/livrarias/{$dados['liv_foto']}\" alt=\"Logo da livraria\">
                    
                 </a>
-                <p>{$registro['liv_nome']}</p>
-                <p>{$registro['liv_email']}</p>
-                <div>{$registro['total_livros']}</div>
-                  <a href='altera-formulario-parceria.php?id={$registro['liv_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
+                <p>{$dados['liv_nome']}</p>
+                <p>{$dados['liv_email']}</p>
+                <p>{$dados['liv_endereco']}. {$dados['liv_cidade']} ({$dados['liv_estado']})</p>
+                <div>{$dados['total_livros']}</div>
+                  <a href='altera-formulario-parceria.php?id={$dados['liv_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
             </div>
             ";
                     }
@@ -162,6 +163,7 @@ GROUP BY
                 </a>
                 <p>{$registro['liv_nome']}</p>
                 <p>{$registro['liv_email']}</p>
+                <p>{$dados['liv_endereco']}. {$dados['liv_cidade']} ({$dados['liv_estado']})</p>
                 <div>{$registro['total_livros']}</div>
                   <a href='altera-formulario-parceria.php?id={$registro['liv_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
             </div>
