@@ -104,8 +104,7 @@ LEFT JOIN
     livrarias_livros
 ON 
     livrarias.liv_id =  livrarias_livros.liv_id
-GROUP BY 
-    liv_nome,liv_cidade,liv_estado,liv_endereco, liv_email,liv_foto";
+    liv_nome LIKE '%$pesquisa%'";
     // PAREI AQUI
                 $sql_query = $conn->query($sql_code) or die("Erro ao consultar: " . $conn->error);
 
@@ -114,7 +113,18 @@ GROUP BY
                 } else {
 
                     while ($dados = $sql_query->fetch_assoc()) {
-                        echo " sd";
+                         echo "
+            <div>
+                <a href=\"https://wa.me/{$registro['liv_telefone']}?text=$mensagem\" target=\"_blank\">
+                  <img src=\"../imagens/livrarias/{$registro['liv_foto']}\" alt=\"Logo da livraria\">
+                   
+                </a>
+                <p>{$registro['liv_nome']}</p>
+                <p>{$registro['liv_email']}</p>
+                <div>{$registro['total_livros']}</div>
+                  <a href='altera-formulario-parceria.php?id={$registro['liv_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
+            </div>
+            ";
                     }
 
                 }
