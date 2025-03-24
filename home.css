@@ -32,5 +32,10 @@
     position: relative;
     border: 1px solid red;
     margin-top: 3rem;
+    background-color: #406E96;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
