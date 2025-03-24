@@ -25,14 +25,25 @@
     font-size: 2rem;
 }
 
-.BtnCadastrar {
-    background-color:#2A4A64;
-    width:300px;
-    height:100px;
-    margin-top:200px;
-}
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 50vw;
+    margin: 0 auto;
+    max-width: 100%;
+  }
 
-.LinkCentrado {
-    margin-left: 30%;
-    margin-top:30%;
-}
+  .btn {
+    flex: 1 1 auto;
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    background-color: #2A4A64;
+   }
