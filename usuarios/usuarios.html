@@ -11,15 +11,29 @@ include "../protecao.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <link rel="stylesheet" href="usuario.css">
     
 >>>>>>> d6464d2ab74583315d497b19610cf63a74474128
+=======
+
+
+    <link rel="stylesheet" href="usuario.css">
+
+    <link rel="stylesheet" href="usuario.css">
+    
+
+>>>>>>> 8a4aaff9692545621367c145b985d6b2a174efbd
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <title>ADM BC - Usuarios</title>
 </head>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8a4aaff9692545621367c145b985d6b2a174efbd
 <body>
 <header>
         Adiministrador BC
@@ -165,6 +179,10 @@ include "../protecao.php";
         <div>
             <?php
               $consulta = "SELECT usu_nome, usu_id, usu_status FROM usuarios ";  
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8a4aaff9692545621367c145b985d6b2a174efbd
 
               if ($card = mysqli_query($conn, $consulta)) {
                 while ($row = mysqli_fetch_array($card)) {
@@ -173,6 +191,10 @@ include "../protecao.php";
                         echo "
                         <div style='background-color: rgba(53, 50, 52, .5);'>
                           <p>Usuário: {$row['usu_nome']}</p>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8a4aaff9692545621367c145b985d6b2a174efbd
                           <p>Id: {$row['usu_id']}</p>";
 
                           if ($row['usu_tipo_usuario'] == 0) {
@@ -213,7 +235,12 @@ include "../protecao.php";
               }
 
             }
+<<<<<<< HEAD
         
+=======
+             
+
+>>>>>>> 8a4aaff9692545621367c145b985d6b2a174efbd
                           <p>Id: {$row['usu_id']}</p>
                           <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
                         </div>
