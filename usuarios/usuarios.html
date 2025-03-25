@@ -73,14 +73,14 @@ include "../protecao.php";
 <!--Botão de cadastro de usuário-->
 <div class='container'>
     <div class="botao">
-        <a href="cadastrarusuario.php" class="LinkCentrado">Cadastrar usuário</a>
+        <a href="cadastrarusuario.php">Cadastrar usuário</a>
     </div>
 
     <!-- BARRA DE PESQUISA -->
     <div class="busca">
         <form action="" method="GET" class="search-form">
             <input type="text" name="busca" placeholder="PESQUISAR USUARIOS">
-            <button type="submit">PESQUISAR</button>
+            <button type="submit" class="bx bxs-edit-alt"></button>
         </form>
     </div>
 </div>
@@ -102,13 +102,15 @@ include "../protecao.php";
                 } else {
                     while ($dados = $sql_query->fetch_assoc()) {
                         echo "
+                    <div class="container">
                         <div class="containerInput">
                         <text>NOME DE USUARIO</text>
                          <p class="inputNome">Usuário: {$row['usu_nome']}</p>
                          <text>ID</text>
                          <p class="inputID">Id: {$row['usu_id']}</p>
-                          <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
+                          <a href='editarusuario.php?id={$row['usu_id']}'><div class="botao">TESTE</div></a>
                        </div>
+                    </div>
                      ";
                     }
                 }
@@ -125,22 +127,23 @@ include "../protecao.php";
 
                     if ($row['usu_status'] == 0) {
                         echo "
-                       <div class="containerInput">
+                    <div class="containerInput" style='background-color: rgba(53, 50, 52, .5);'>
                         <text>NOME DE USUARIO</text>
-                         <p class="inputNome">Usuário: {$row['usu_nome']}</p>
-                         <text>ID</text>
-                         <p class="inputID">>Id: {$row['usu_id']}</p>
-                         <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
-                       </div>
+                          <p class="inputNome">Usuário: {$row['usu_nome']}</p>
+                        <text>ID</text>
+                          <p class="inputID">Id: {$row['usu_id']}</p>
+                          <a href='editarusuario.php?id={$row['usu_id']}'><div class="bx bxs-edit-alt"></div></a>
+                          <>
+                    </div>
                      ";
-                    }
+                    };
                     echo "
                        <div class="containerInput">
                         <text>NOME DE USUARIO</text>
                          <p class="inputNome">Usuário: {$row['usu_nome']}</p>
                          <text>ID</text>
                          <p class="inputID">>Id: {$row['usu_id']}</p>
-                         <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
+                         <a href='editarusuario.php?id={$row['usu_id']}'><div class="bx bxs-edit-alt"></div></a>
                        </div>
                     ";
                 }
