@@ -34,27 +34,44 @@ border-color:red;
     align-items: center;
 }
 
+.container {
+    display: flex;
+    align-items: center; /* Alinha os elementos verticalmente */
+    gap: 20px; /* Espaço entre os elementos */
+}
+
+.botao {
+    display: flex;
+}
+
+.busca {
+    display: flex;
+    align-items: center;
+}
+
 .search-form {
-    display: flex;  /* Usa flexbox para alinhar os elementos */
-    align-items: center; /* Alinha verticalmente */
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc; /* Adiciona uma borda */
+    border-radius: 5px;
+    overflow: hidden; /* Garante que os elementos fiquem alinhados */
 }
 
 .search-form input {
     padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    width: 250px; /* Ajuste o tamanho conforme necessário */
+    border: none;
+    outline: none;
+    flex: 1; /* Faz o campo ocupar o espaço disponível */
 }
 
 .search-form button {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 0 4px 4px 0;
+    background: none;
+    border: none;
     cursor: pointer;
+    padding: 5px;
 }
 
-.search-form button:hover {
-    background-color: #0056b3;
+.search-form button img {
+    width: 20px; /* Ajuste o tamanho do ícone */
+    height: 20px;
 }
