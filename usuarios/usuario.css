@@ -9,7 +9,7 @@
 main{
 border-color:red;
 }
-/* CSS DO BUTTON */
+
 .avaliar {
     position: relative;
     border: 1px solid red;
@@ -20,54 +20,83 @@ border-color:red;
     align-items: center;
 }
 
+/* BOTÃO DOS INPUTS */
+
 .botao{
     background-color:#2A4A64;
     color:#f5f5f5;
     width: 10rem;
     height: 2rem;
+    padding:10px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* BOTÃO CADASTRO DE USUARIO */
+.botaoCad{
+    background-color:#2A4A64;
+    padding:20px;
+    color:#f5f5f5;
+    width: 10rem;
+    height: 2rem;
+    gap:2px;
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* CONTAINER DO BUTTON/SEARCH-BAR */
+
 .container {
+    margin-top: 40px;
     display: flex;
     align-items: center; /* Alinha os elementos verticalmente */
-    gap: 20px; /* Espaço entre os elementos */
+    gap: 40px; /* Espaço entre os elementos */
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas menores */
+}
+
+/* CONTAINER PRA DAR DISPLAY FLEX NO ID/BUTTON */
+.containerBtnInput {
+    display: flex;
+    align-items: center; /* Alinha os elementos verticalmente */
+    gap: 40px; /* Espaço entre os elementos */
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas menores */
 }
 
 .botao {
     display: flex;
+    width: 200px;
+    height: 50px;
+    justify-content: center; /* Centraliza o texto dentro do botão */
+    align-items: center; /* Centraliza verticalmente */
 }
 
 /* CSS DA SEARCH-BAR */
-
 .busca {
     display: flex;
     align-items: center;
+    flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas menores */
+}
+
+.search-input {
+    width: 300px; /* Largura padrão */
+    padding: 10px; /* Adiciona um pouco de espaço interno */
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    border: 1px solid #ccc; /* Adiciona uma borda */
+    border-radius: 4px; /* Arredonda os cantos */
 }
 
 .search-form {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc; /* Adiciona uma borda */
-    border-radius: 5px;
-    overflow: hidden; /* Garante que os elementos fiquem alinhados */
-}
-
-.search-form input {
-    padding: 8px;
-    border: none;
-    outline: none;
-    flex: 1; /* Faz o campo ocupar o espaço disponível */
+    display: flex; /* Alinha o input e o botão na mesma linha */
 }
 
 .search-form button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
+    border-radius: 5px;
+    background-color: #DEDEDE;
+    padding: 10px; /* Adiciona um pouco de espaço interno ao botão */
 }
 
 .search-form button img {
@@ -99,13 +128,46 @@ border-color:red;
     background-color: white; /* Cor de fundo do input */
 }
 
-
 /* CONTAINER DO INPUT USUARIO/ID */
-
 .containerInput {
     background-color: #406E96; /* Cor de fundo do container */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 50%; /* Largura do container */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Alinha os elementos em coluna em telas menores */
+        align-items: flex-start; /* Alinha os itens à esquerda */
+    }
+
+    .containerBtnInput {
+        flex-direction: column; /* Alinha os botões e inputs em coluna */
+        gap: 20px; /* Reduz o espaço entre os elementos */
+    }
+
+    .search-input {
+        width: 100%; /* Largura total em telas menores */
+    }
+
+    .botao {
+        width: 100%; /* Botão ocupa toda a largura em telas menores */
+    }
+
+    .containerInput {
+        width: 100%; /* Container ocupa toda a largura em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-input {
+        font-size: 14px; /* Reduz o tamanho da fonte em telas muito pequenas */
+    }
+
+    .botao {
+        height: 40px; /* Reduz a altura do botão em telas muito pequenas */
+    }
 }

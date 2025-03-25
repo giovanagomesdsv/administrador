@@ -79,7 +79,7 @@ include "../protecao.php";
     <!-- BARRA DE PESQUISA -->
     <div class="busca">
         <form action="" method="GET" class="search-form">
-            <input type="text" name="busca" placeholder="PESQUISAR USUARIOS">
+            <input type="text" name="busca" placeholder="PESQUISAR USUARIOS" class="search-input">
             <button type="submit" class="bx bxs-edit-alt"></button>
         </form>
     </div>
@@ -102,15 +102,17 @@ include "../protecao.php";
                 } else {
                     while ($dados = $sql_query->fetch_assoc()) {
                         echo "
-                    <div class="container">
+                
                         <div class="containerInput">
                         <text>NOME DE USUARIO</text>
                          <p class="inputNome">Usuário: {$row['usu_nome']}</p>
                          <text>ID</text>
+                        <div class="containerBtnInput">
                          <p class="inputID">Id: {$row['usu_id']}</p>
-                          <a href='editarusuario.php?id={$row['usu_id']}'><div class="botao">TESTE</div></a>
+                          <a href='editarusuario.php?id={$row['usu_id']}'><div class="botao">ATUALIZAR</div></a>
+                        </div>
                        </div>
-                    </div>
+                
                      ";
                     }
                 }
@@ -127,23 +129,27 @@ include "../protecao.php";
 
                     if ($row['usu_status'] == 0) {
                         echo "
-                    <div class="containerInput" style='background-color: rgba(53, 50, 52, .5);'>
-                        <text>NOME DE USUARIO</text>
-                          <p class="inputNome">Usuário: {$row['usu_nome']}</p>
-                        <text>ID</text>
-                          <p class="inputID">Id: {$row['usu_id']}</p>
-                          <a href='editarusuario.php?id={$row['usu_id']}'><div class="bx bxs-edit-alt"></div></a>
-                          <>
-                    </div>
-                     ";
-                    };
-                    echo "
-                       <div class="containerInput">
+                        <div class="containerInput">
+                            <text>NOME DE USUARIO</text>
+                             <p class="inputNome">Usuário: {$row['usu_nome']}</p>
+                             <text>ID</text>
+                            <div class="containerBtnInput">
+                             <p class="inputID">Id: {$row['usu_id']}</p>
+                              <a href='editarusuario.php?id={$row['usu_id']}'><div class="botao">ATUALIZAR</div></a>
+                            </div>
+                           </div>
+                           "; 
+                        } 
+                    } 
+                ?>
+                    <div class="containerInput">
                         <text>NOME DE USUARIO</text>
                          <p class="inputNome">Usuário: {$row['usu_nome']}</p>
                          <text>ID</text>
-                         <p class="inputID">>Id: {$row['usu_id']}</p>
-                         <a href='editarusuario.php?id={$row['usu_id']}'><div class="bx bxs-edit-alt"></div></a>
+                        <div class="containerBtnInput">
+                         <p class="inputID">Id: {$row['usu_id']}</p>
+                          <a href='editarusuario.php?id={$row['usu_id']}'><div class="botao">ATUALIZAR</div></a>
+                        </div>
                        </div>
                     ";
                 }
