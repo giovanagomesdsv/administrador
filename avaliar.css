@@ -51,3 +51,28 @@ body{
     margin-top:1rem ;
     color:black;
 }
+
+.cardforms {
+    width: 100%; /* Ajusta a largura do formulário */
+    max-width: 400px; /* Define uma largura máxima */
+    margin: 0 auto; /* Centraliza o formulário */
+    display:flex;
+}
+
+.cardforms select {
+    width: 100%; /* Faz o select ocupar toda a largura do formulário */
+    padding: 2rem; /* Adiciona um pouco de espaço interno */
+    font-size: 2rem; /* Aumenta o tamanho da fonte */
+    margin-bottom: 1rem; 
+    color: black;/* Adiciona espaço abaixo do select */
+}
+
+.cardforms input[type='submit'] {
+    width: 100%; /* Faz o botão ocupar toda a largura do formulário */
+    padding: 2rem; /* Adiciona um pouco de espaço interno */
+    font-size:2rem; /* Aumenta o tamanho da fonte */
+    color: black; /* Cor do texto do botão */
+    margin-bottom: 1rem; 
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+

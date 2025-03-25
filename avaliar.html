@@ -23,25 +23,28 @@ include "conexao-banco/conexao.php";
 
   <p class="avaliaresenha">ㅤㅤㅤㅤㅤAVALIAR RESENHAㅤㅤㅤㅤㅤ</p>
   <div class="cardazul">
-        <p>{$row['resenha_titulo']}</p>
-      <div class="cardbranco1">
-        <p>{$row['livro_sinopse']}</p>
-      </div>
-      <p>RESENHA</p>
-      <div class="cardbranco2">
-       <p>{$row['resenha_texto']}</p>
-      </div>
-       <p>{$row['res_nome_fantasia']}</p>
+    <p>{$row['resenha_titulo']}</p>
+  <div class="cardbranco1">
+    <p>{$row['livro_sinopse']}</p>
+  </div>
+  <p>RESENHA</p>
+  <div class="cardbranco2">
+   <p>{$row['resenha_texto']}</p>
+  </div>
+   <p>{$row['res_nome_fantasia']}</p>
 
-    <form action='enviar-avaliacao.php?id={$dado}' method='post'>
-        <select name='avaliar' required>
-            <option value=''>Avaliar</option>
-            <option value='1'>Reprovada</option>
-            <option value='3'>Corrigir</option>
-            <option value='2'>Aprovada</option>
-        </select>
-        <input type='submit' value='enviar'>
-    </form>
+
+<form action='enviar-avaliacao.php?id={$dado}' method='post' class="cardforms">
+    <select name='avaliar' required>
+        <option value=''>Avaliar</option>
+        <option value='1'>Reprovada</option>
+        <option value='3'>Corrigir</option>
+        <option value='2'>Aprovada</option>
+    </select>
+    <input type='submit' value='enviar'>
+ 
+</form>
+
 </div>
 </body>
 </html>
