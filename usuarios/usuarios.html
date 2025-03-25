@@ -71,18 +71,19 @@ include "../protecao.php";
     
     <main>
 <!--Botão de cadastro de usuário-->
-      <div class="botao">
-         <a href="cadastrarusuario.php" class="LinkCentrado">Cadastrar usuário</a>
-      </div>
+<div class='container'>
+    <div class="botao">
+        <a href="cadastrarusuario.php" class="LinkCentrado">Cadastrar usuário</a>
+    </div>
 
-<!-- BARRA DE PESQUISA ----------------------------------------------------------------------------------------------------------------------------------------------------------------->
-       <div class="busca">
-            <form action="" method="GET">
-                <input type="text" name="busca" placeholder="Busque os usuários...">
-                <button type="submit">Pesquisar</button>
-            </form>
-        </div>
-
+    <!-- BARRA DE PESQUISA -->
+    <div class="busca">
+        <form action="" method="GET" class="search-form">
+            <input type="text" name="busca" placeholder="PESQUISAR USUARIOS">
+            <button type="submit"><img src="P:\giovana\tcc\administrador\imagens\icons" alt="search-alt" /></button>
+        </form>
+    </div>
+</div>
         <div> <!-- DIV DA CAIXA ONDE DENTRO APARECERÁ OS CARDS DO RESULTADO DA BUSCA-->
             <?php
             if (!isset($_GET['busca']) || empty($_GET['busca'])) {
