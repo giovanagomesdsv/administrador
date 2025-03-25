@@ -36,23 +36,18 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-
-
+    text-align: left;
 }
 .cardbranco1{
     background-color:#DEDEDE;
     width: 80%;
-    margin-top:3rem ;
-    display: flex;
-    
-    align-content:start;
+    margin-top:1rem ;
+    color:black;
 }
 
 .cardbranco2{
     background-color:#DEDEDE;
     width: 90%;
-    margin-top:3rem ;
-    display: flex;
-    justify-content:center;
-    border-color: red;
+    margin-top:1rem ;
+    color:black;
 }
