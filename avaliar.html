@@ -22,12 +22,16 @@ include "conexao-banco/conexao.php";
 <body>
 
   <p>ㅤㅤㅤㅤㅤㅤAVALIAR RESENHAㅤㅤㅤㅤㅤㅤ</p>
-  <div class="card">
+  <div class="cardazul">
    
 <p>{$row['resenha_titulo']}</p>
+<div class="cardbranco">
 <p>{$row['livro_sinopse']}</p>
+</div>
 <class class="resenha">
+  <div class="cardbranco">
 <p>{$row['resenha_texto']}</p>
+</div>
 <p>{$row['res_nome_fantasia']}</p>
 </class>
 <form action='enviar-avaliacao.php?id={$dado}' method='post'>

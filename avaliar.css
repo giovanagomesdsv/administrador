@@ -20,11 +20,16 @@ body{
     }
 
 
-.card{
+.cardazul{
     background-color: #406E96;
     border: 1px solid red;
     color: #f5f5f5;
     width: 100%;
+    display: flex;
+
+    text-align: center;
+   justify-content: center;
+   align-items: center;
 }
 
 p{
@@ -38,6 +43,13 @@ p{
    align-items: center;
 }
 
-.resenha{
+
+.cardbranco{
+    background-color:#DEDEDE;
+    width: 80%;
+    display: flex;
     
+}
+.resenha{
+
 }
