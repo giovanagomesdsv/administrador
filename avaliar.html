@@ -15,14 +15,21 @@ include "conexao-banco/conexao.php";
 <head>
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel="stylesheet" href="avaliar.css">
+   
 <title>RESENHA: {$row['resenha_titulo']}</title>
 </head>
 <body>
-<h2>{$row['resenha_titulo']}</h2>
+
+  <p>ㅤㅤㅤㅤㅤㅤAVALIAR RESENHAㅤㅤㅤㅤㅤㅤ</p>
+  <div class="card">
+   
+<p>{$row['resenha_titulo']}</p>
 <p>{$row['livro_sinopse']}</p>
+<class class="resenha">
 <p>{$row['resenha_texto']}</p>
 <p>{$row['res_nome_fantasia']}</p>
-
+</class>
 <form action='enviar-avaliacao.php?id={$dado}' method='post'>
         <select name='avaliar' required>
             <option value=''>Avaliar</option>
@@ -32,7 +39,7 @@ include "conexao-banco/conexao.php";
         </select>
         <input type='submit' value='enviar'>
   </form>
-
+</div>
 </body>
 </html>
 
