@@ -102,9 +102,11 @@ include "../protecao.php";
                 } else {
                     while ($dados = $sql_query->fetch_assoc()) {
                         echo "
-                        <div>
-                         <p>Usuário: {$row['usu_nome']}</p>
-                         <p>Id: {$row['usu_id']}</p>
+                        <div class="containerInput">
+                        <text>NOME DE USUARIO</text>
+                         <p class="inputNome">Usuário: {$row['usu_nome']}</p>
+                         <text>ID</text>
+                         <p class="inputID">Id: {$row['usu_id']}</p>
                           <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
                        </div>
                      ";
@@ -123,17 +125,21 @@ include "../protecao.php";
 
                     if ($row['usu_status'] == 0) {
                         echo "
-                        <div style='background-color: rgba(53, 50, 52, .5);'>
-                          <p>Usuário: {$row['usu_nome']}</p>
-                          <p>Id: {$row['usu_id']}</p>
-                          <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
-                        </div>
+                       <div class="containerInput">
+                        <text>NOME DE USUARIO</text>
+                         <p class="inputNome">Usuário: {$row['usu_nome']}</p>
+                         <text>ID</text>
+                         <p class="inputID">>Id: {$row['usu_id']}</p>
+                         <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
+                       </div>
                      ";
                     }
                     echo "
-                       <div>
-                         <p>Usuário: {$row['usu_nome']}</p>
-                         <p>Id: {$row['usu_id']}</p>
+                       <div class="containerInput">
+                        <text>NOME DE USUARIO</text>
+                         <p class="inputNome">Usuário: {$row['usu_nome']}</p>
+                         <text>ID</text>
+                         <p class="inputID">>Id: {$row['usu_id']}</p>
                          <a href='editarusuario.php?id={$row['usu_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
                        </div>
                     ";

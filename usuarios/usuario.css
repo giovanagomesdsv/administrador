@@ -6,14 +6,10 @@
     --terciaria: #1F3A50;
 }
 
-.container {
-    display:inline-block;
-  }
-
 main{
 border-color:red;
 }
-
+/* CSS DO BUTTON */
 .avaliar {
     position: relative;
     border: 1px solid red;
@@ -34,6 +30,7 @@ border-color:red;
     align-items: center;
 }
 
+/* CONTAINER DO BUTTON/SEARCH-BAR */
 .container {
     display: flex;
     align-items: center; /* Alinha os elementos verticalmente */
@@ -43,6 +40,8 @@ border-color:red;
 .botao {
     display: flex;
 }
+
+/* CSS DA SEARCH-BAR */
 
 .busca {
     display: flex;
@@ -74,4 +73,39 @@ border-color:red;
 .search-form button img {
     width: 20px; /* Ajuste o tamanho do ícone */
     height: 20px;
+}
+
+.label {
+    color: rgb(0, 0, 0); /* Cor do texto das labels */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.inputNome {
+    width: 100%; /* Largura total do input */
+    padding: 10px;
+    border: none;
+    border-radius: 4px; 
+    margin-bottom: 15px;
+    background-color: white; /* Cor de fundo do input */
+}
+
+.inputID {
+    width: 100%; /* Largura total do input */
+    padding: 10px;
+    border: none;
+    border-radius: 4px; 
+    margin-bottom: 15px;
+    background-color: white; /* Cor de fundo do input */
+}
+
+
+/* CONTAINER DO INPUT USUARIO/ID */
+
+.containerInput {
+    background-color: #406E96; /* Cor de fundo do container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px; /* Largura do container */
 }
