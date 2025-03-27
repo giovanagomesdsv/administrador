@@ -85,7 +85,7 @@ include "conexao-banco/conexao.php";
             if ($result = mysqli_query($conn, $sql)) {
                 while ($resposta = mysqli_fetch_array($result)) {
                     echo "
-    <div class="card">
+    <div class='card'>
         <div>
             <img src='../administrador/imagens/livros/{$resposta['livro_foto']}' alt=''>
         </div>
@@ -95,7 +95,7 @@ include "conexao-banco/conexao.php";
         </div>
         <div>
            <a href='avaliar.php?id={$resposta['resenha_id']}'>
-              <button class="botao">Avaliar</button>
+              <button class='botao'>Avaliar</button>
            </a>
         </div>
     </div>

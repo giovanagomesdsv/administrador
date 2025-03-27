@@ -103,13 +103,13 @@ include "../protecao.php";
                     while ($dados = $sql_query->fetch_assoc()) {
                         echo "
                 
-                        <div class="containerInput">
+                        <div class='containerInput'>
                         <text>NOME DE USUARIO</text>
-                         <p class="inputNome">Usuário: {$row['usu_nome']}</p>
+                         <p class='inputNome'>Usuário: {$row['usu_nome']}</p>
                          <text>ID</text>
-                        <div class="containerBtnInput">
-                         <p class="inputID">Id: {$row['usu_id']}</p>
-                          <a href='editarusuario.php?id={$row['usu_id']}'><div class="botao">ATUALIZAR</div></a>
+                        <div class='containerBtnInput'>
+                         <p class='inputID'>Id: {$row['usu_id']}</p>
+                          <a href='editarusuario.php?id={$row['usu_id']}'><div class='botao'>ATUALIZAR</div></a>
                         </div>
                        </div>
                 
@@ -129,31 +129,34 @@ include "../protecao.php";
 
                     if ($row['usu_status'] == 0) {
                         echo "
-                        <div class="containerInput">
+                        <div class='containerInput'>
                             <text>NOME DE USUARIO</text>
-                             <p class="inputNome">Usuário: {$row['usu_nome']}</p>
+                             <p class='inputNome'>Usuário: {$row['usu_nome']}</p>
                              <text>ID</text>
-                            <div class="containerBtnInput">
-                             <p class="inputID">Id: {$row['usu_id']}</p>
-                              <a href='editarusuario.php?id={$row['usu_id']}'><div class="botao">ATUALIZAR</div></a>
+                            <div class='containerBtnInput'>
+                             <p class='inputID'>Id: {$row['usu_id']}</p>
+                              <a href='editarusuario.php?id={$row['usu_id']}'><div class='botao'>ATUALIZAR</div></a>
                             </div>
                            </div>
                            "; 
-                        } 
-                    } 
-                ?>
-                    <div class="containerInput">
+                        }  else {
+                  
+                   echo " <div class='containerInput'>
                         <text>NOME DE USUARIO</text>
-                         <p class="inputNome">Usuário: {$row['usu_nome']}</p>
+                         <p class='inputNome'>Usuário: {$row['usu_nome']}</p>
                          <text>ID</text>
-                        <div class="containerBtnInput">
-                         <p class="inputID">Id: {$row['usu_id']}</p>
-                          <a href='editarusuario.php?id={$row['usu_id']}'><div class="botao">ATUALIZAR</div></a>
+                        <div class='containerBtnInput'>
+                         <p class='inputID'>Id: {$row['usu_id']}</p>
+                          <a href='editarusuario.php?id={$row['usu_id']}'><div class='botao'>ATUALIZAR</div></a>
                         </div>
                        </div>
                     ";
                 }
-              }
+            }
+      }
+
+            
+              
             ?>
         </div>
 
