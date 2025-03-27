@@ -134,7 +134,17 @@ border-color:red;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 50%; /* Largura do container */
+    width: 50rem; /* Largura do container */
+    margin-top: 3%;
+}
+
+.containerInput-des {
+    background-color: #27343f; /* Cor de fundo do container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 50rem; /* Largura do container */
+    margin-top: 3%;
 }
 
 /* Media Queries para Responsividade */

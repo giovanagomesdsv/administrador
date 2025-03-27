@@ -129,7 +129,7 @@ include "../protecao.php";
 
                     if ($row['usu_status'] == 0) {
                         echo "
-                        <div class='containerInput'>
+                        <div class='containerInput-des'>
                             <text>NOME DE USUARIO</text>
                              <p class='inputNome'>Usuário: {$row['usu_nome']}</p>
                              <text>ID</text>
