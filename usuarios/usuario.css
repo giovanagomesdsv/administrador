@@ -146,6 +146,10 @@ border-color:red;
     width: 50rem; /* Largura do container */
     margin-top: 3%;
 }
+/* COR DO TEXTO DO INPUT DO SITE */
+p{
+    color:black;
+}
 
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {

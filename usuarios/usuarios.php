@@ -80,7 +80,6 @@ include "../protecao.php";
     <div class="busca">
         <form action="" method="GET" class="search-form">
             <input type="text" name="busca" placeholder="PESQUISAR USUARIOS" class="search-input">
-            <button type="submit" class="bx bxs-edit-alt"></button>
         </form>
     </div>
 </div>
