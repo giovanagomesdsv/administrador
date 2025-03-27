@@ -104,11 +104,11 @@ include "../protecao.php";
                 
                         <div class='containerInput'>
                         <text>NOME DE USUARIO</text>
-                         <p class='inputNome'>Usuário: {$row['usu_nome']}</p>
+                         <p class='inputNome'>Usuário: {$dados['usu_nome']}</p>
                          <text>ID</text>
                         <div class='containerBtnInput'>
-                         <p class='inputID'>Id: {$row['usu_id']}</p>
-                          <a href='editarusuario.php?id={$row['usu_id']}'><div class='botao'>ATUALIZAR</div></a>
+                         <p class='inputID'>Id: {$dados['usu_id']}</p>
+                          <a href='editarusuario.php?id={$dados['usu_id']}'><div class='botao'>ATUALIZAR</div></a>
                         </div>
                        </div>
                 
