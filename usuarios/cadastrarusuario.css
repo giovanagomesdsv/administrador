@@ -33,7 +33,7 @@ label {
 
 /* Estilos dos inputs e select */
 select, input[type="text"], input[type="submit"], input[type="number"], input[type="email"], textarea {
-    width: 95%;
+    width: 98%;
     padding: 10px;
     margin: 10px 0 15px 0; /* Aumentei o espaço inferior entre os inputs */
     background-color: var(--secundaria);
