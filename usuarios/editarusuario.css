@@ -26,7 +26,7 @@ label {
 
 /* Estilos do select e input */
 select, input[type="submit"] {
-    width: 90%;
+    width: 98%;
     padding: 10px;
     margin: 10px 0 15px 0; /* Espaço inferior entre os elementos */
     background-color: #2A4A64;
