@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <link rel="stylesheet" href="cadastrarusuario.css">
 </head>
-<body>
+<body style="background-color:#DEDEDE">
     <form action="cadastrar.php" method="POST">
 
     <label for="email">E-mail:</label>

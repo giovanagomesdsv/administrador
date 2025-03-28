@@ -95,7 +95,7 @@ border-color:red;
 
 .search-form button {
     border-radius: 5px;
-    background-color: #DEDEDE;
+    background-color: var(--bg);
     padding: 10px; /* Adiciona um pouco de espaço interno ao botão */
 }
 
@@ -130,7 +130,7 @@ border-color:red;
 
 /* CONTAINER DO INPUT USUARIO/ID */
 .containerInput {
-    background-color: #406E96; /* Cor de fundo do container */
+    background-color: var(--principal); /* Cor de fundo do container */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
