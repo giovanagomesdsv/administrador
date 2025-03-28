@@ -5,30 +5,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de parcerias</title>
+    <title></title>
 </head>
 
 <body>
-    <form action="inserirnovaparceria.php" enctype="multipart/form-data" method="POST" name="cadastroparcerias">
+    <form action="inserirlivraria.php" enctype="multipart/form-data" method="POST" name="cadastrolivrarias">
         <h1>CADASTRO DE PARCERIAS</h1>
-        <label for="cnpj">CNPJ:</label>
-        <input type="text" name="cnpj">
 
-        <label for="rg">(PARA ADM)RG:</label>
-        <input type="text" name="rg">
-
-        <label for="usuario">Usuário:</label>
+        <label for="usuario">ID do usuário:</label>
         <input type="text" name="usuario">
 
-        <label for="senha">Senha:</label>
-        <input type="password" name="senha">
 
-        <label for="nome">Nome:</label>
+        <label for="nome">Nome da livraria:</label>
         <input type="text" name="nome">
 
-        <label for="endereco">Endereço:</label>
-        <input type="text" name="endereco" placeholder="Praça da República, 1572">
-
+        
         <label for="cidade">Cidade:</label>
         <input type="text" name="cidade">
 
@@ -40,6 +31,10 @@
             <option value="RJ">RJ</option>
         </select>
 
+        <label for="endereco">Endereço:</label>
+        <input type="text" name="endereco" placeholder="Praça da República, 1572">
+
+
         <label for="telefone">Telefone:</label>
         <input type="text" name="telefone" placeholder="5511987543211">
 
@@ -49,18 +44,16 @@
         <label for="instagram">Instagram:</label>
         <input type="text" name="instagram" placeholder="URL">
 
-        <label for="tiktok">Tik Tok:</label>
-        <input type="text" name="tiktok" placeholder="URL">
+        <label for="perfil">Texto de perfil:</label>
+        <input type="text" name="perfil">
 
-        <label for="x">x:</label>
-        <input type="text" name="x" placeholder="URL">
 
         <label for="arquivo">Selecione uma imagem</label>
         <input type="file" name="arquivo">
 
         <input type="submit" value="cadastrar">
 
-        <a href="parcerias.php">Voltar</a>
+        <a href="livrarias.php">Voltar</a>
     </form>
 </body>
 

@@ -33,7 +33,11 @@
     position: relative;
     border: 1px solid red;
     margin-top: 3rem;
+<<<<<<< Updated upstream
     background-color:var(--principal);
+=======
+    background-color: var(--principal);
+>>>>>>> Stashed changes
     display: flex;
     flex-direction: flex-end;
     justify-content:space-between;

@@ -1,19 +1,17 @@
 <?php
 include "../conexao-banco/conexao.php";
 
-$cnpj = $_POST['cnpj'];
-$rg = $_POST['rg'];
-$usuario = $_POST['usuario'];                               
-$senha = password_hash($_POST['senha'], PASSWORD_BCRYPT);                    
-$nome = $_POST['nome'];
-$endereco = $_POST['endereco'];                      
+
+$usuario = $_POST['usuario'];                                                 
+$nome = $_POST['nome'];                     
 $cidade = $_POST['cidade'];
-$estado = $_POST['estado'];                          
+$estado = $_POST['estado'];   
+$endereco = $_POST['endereco'];                        
 $telefone = $_POST['telefone'];                
 $email = $_POST['email'];
 $instagram = $_POST['instagram'];                          
-$tiktok = $_POST['tiktok'];                                 
-$x_social  = $_POST['x'];     
+$perfil = $_POST['perfil'];                          
+  
 
 if (isset($_FILES['arquivo'])) {
     $arquivo = $_FILES['arquivo'];
@@ -28,7 +26,7 @@ if (isset($_FILES['arquivo'])) {
         $nomeDoArquivo = $arquivo['name'];
         $novoNomeDoArquivo = uniqid();
         $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
-        $pasta = "img-parceria/";
+        $pasta = "imagens/livrarias/";
 
     if($extensao != "jpg" && $extensao != 'png')
        die("Tipo de arquivo não aceito!");
@@ -40,21 +38,21 @@ if (isset($_FILES['arquivo'])) {
        $deu_certo = move_uploaded_file($arquivo["tmp_name"],  $caminho);
 }
 
-$sql_code = "INSERT INTO parceria (cnpj, rg, usuario, senha, nome, endereco, cidade, estado, telefone, email, instagram, tiktok, x_social, path) VALUES ('$cnpj', '$rg', '$usuario', '$senha', '$nome', '$endereco', '$cidade', '$estado', '$telefone', '$email', '$instagram', '$tiktok', '$x_social', '$path')";
+$sql_code = "INSERT INTO LIVRARIAS (liv_id,liv_nome,liv_cidade,liv_estado,liv_endereco,liv_telefone,liv_email,liv_foto,liv_perfil,liv_social) VALUES ('$usuario', '$nome', '$cidade', '$estado', '$endereco',  '$telefone', '$email', '$path', '$perfil', '$instagram'  )";
 
 
 if (mysqli_query($conn, $sql_code)) {
     echo '
     <script>
          window.alert("Dados inseridos com sucesso!");
-         location.href="parcerias.php";
+         location.href="livrarias.php";
     </script>
     ';
 } else {
     echo '
     <script>
-         window.alert("Erro na inserção!");
-         location.href="parcerias.php";
+         window.alert("Erro na inserção: ' . mysqli_error($conn) . '");
+         location.href="livrarias.php";
     </script>
     ';
 };
