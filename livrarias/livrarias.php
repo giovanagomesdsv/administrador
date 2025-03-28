@@ -123,7 +123,6 @@ ON
                 <p>{$dados['liv_email']}</p>
                 <p>{$dados['liv_endereco']}. {$dados['liv_cidade']} ({$dados['liv_estado']})</p>
                 <div>{$dados['total_livros']}</div>
-                  <a href='altera-formulario-parceria.php?id={$dados['liv_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
             </div>
             ";
                     }
@@ -165,7 +164,6 @@ GROUP BY
                 <p>{$registro['liv_email']}</p>
                 <p>{$registro['liv_endereco']}. {$registro['liv_cidade']} ({$registro['liv_estado']})</p>
                 <div>{$registro['total_livros']}</div>
-                  <a href='altera-formulario-parceria.php?id={$registro['liv_id']}'><div class=\"bx bxs-edit-alt\"></div></a>
             </div>
             ";
             }
