@@ -87,7 +87,7 @@ include "conexao-banco/conexao.php";
                     echo "
     <div class='card'>
         <div>
-            <img src='../administrador/imagens/livros/{$resposta['livro_foto']}' alt=''>
+            <img class='imglivro' src='../administrador/imagens/livros/{$resposta['livro_foto']}' alt='' >
         </div>
         <div>
             <p>{$resposta['resenha_titulo']}</p>

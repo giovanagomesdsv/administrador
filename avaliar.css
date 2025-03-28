@@ -26,7 +26,13 @@ body{
         text-decoration: underline ;
        line-height: 10rem;
     }
-
+    .imgtitulo{
+        border: 1px solid red;
+        display: flex;
+       width: 80%;
+        justify-content: space-between;
+      
+    }
 .cardazul{
     background-color: #406E96;
     border: 1px solid red;
