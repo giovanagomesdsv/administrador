@@ -75,7 +75,7 @@ include "conexao-banco/conexao.php";
         <div class="titulo">
           <h3>Olá, <?php echo $_SESSION['nome']; ?>, <br> Seja bem-vindo!</h3> 
         </div>
-        <div class="linhavaliar">
+            <div class="linhavaliar">
             <p>ㅤㅤㅤㅤㅤㅤAVALIARㅤㅤㅤㅤㅤㅤ</p>
            </div>
         <div class="avaliar">
