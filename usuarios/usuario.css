@@ -87,6 +87,7 @@ border-color:red;
     font-size: 16px; /* Aumenta o tamanho da fonte */
     border: 1px solid #ccc; /* Adiciona uma borda */
     border-radius: 4px; /* Arredonda os cantos */
+    color:black;
 }
 
 .search-form {
