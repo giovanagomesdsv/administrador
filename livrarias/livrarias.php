@@ -22,7 +22,7 @@ include "../protecao.php";
 
 <body>
     <header>
-        Adiministrador BC
+        Administrador BC
     </header>
  <!--   <nav class="sidebar" id="sidebar"> 
         <div class="nome">
@@ -30,9 +30,6 @@ include "../protecao.php";
             <div class="menu" id="menu">
                 <i class="bx bx-menu"></i>
             </div>
-               <div class="linhavaliar">
-                <p>AVALIAR</p>
-               </div>
         </div>
         <ul class="nav-list">
             <li>

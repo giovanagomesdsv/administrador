@@ -17,18 +17,16 @@ include "../protecao.php";
 </head>
 
 <body>
-<header>
-        Adiministrador BC
+    <header>
+        Administrador BC
     </header>
-    <nav class="sidebar" id="sidebar"> 
+    <!--
+    <nav class="sidebar" id="sidebar">
         <div class="nome">
             <div class="logo_name">Bem Vindo, <br> <?php echo $_SESSION['nome']; ?>!</div>
             <div class="menu" id="menu">
                 <i class="bx bx-menu"></i>
             </div>
-               <div class="linhavaliar">
-                <p>AVALIAR</p>
-               </div>
         </div>
         <ul class="nav-list">
             <li>
@@ -66,8 +64,9 @@ include "../protecao.php";
             </li>
         </ul>
     </nav>
+-->
     <div>
-        <a href="novoresenhista.php">Adicionar novo resenhista</a>
+        <a href="novoresenhista.php">Cadastrar resenhista</a>
     </div>
     <div>
 
@@ -75,45 +74,41 @@ include "../protecao.php";
         // Consulta que obtém informações dos resenhistas e total de resenhas
         $consulta = "
             SELECT 
-                ar.id_autor_resenha,
-                ar.nome,
-                ar.pseudonimo,
-                ar.email,
-                ar.path,
-                ar.pontos,
-                ar.telefone,
-                COUNT(r.id_resenha) AS total_resenhas
+               res_nome_fantasia,
+               res_telefone,
+               resenha_titulo,
+               titulo.tit_nome,
+                COUNT(resenhistas.res_id) AS total_resenhas
             FROM 
-                autor_resenha ar
+                resenhistas
             LEFT JOIN 
-                resenha r 
+                resenhas 
             ON 
-                ar.id_autor_resenha = r.id_autor_resenha
+                resenhistas.res_id = resenhas.res_id
+			RIGHT JOIN 
+            titulo
+            ON
+               resenhistas.tit_id = titulo.tit_id
             GROUP BY 
-                ar.id_autor_resenha, ar.nome, ar.pseudonimo, ar.email, ar.path, ar.pontos
+                res_nome_fantasia,
+               res_telefone
         ";
 
         if ($resp_consulta = mysqli_query($conn, $consulta)) {
 
             while ($linha = mysqli_fetch_array($resp_consulta)) {
-                $mensagem = urlencode("Olá, aqui fala a admiistradora do site Bibliófilos community!");
+                $mensagem = urlencode("Olá, aqui fala a admistradora do site Bibliófilos community!");
 
                 echo "
             <div>
                 <div>
-                    <a href=\"https://wa.me/{$linha['telefone']}?text=$mensagem\" target=\"_blank\"><img src='{$linha['path']}' alt='Foto do Resenhista'></a>
+                    <a href=\"https://wa.me/{$linha['res_telefone']}?text=$mensagem\" target=\"_blank\"><img src='{$linha['path']}' alt='Foto do Resenhista'></a>
                     <h3>{$linha['nome']}</h3>
-                    <p><strong>Pseudônimo:</strong> {$linha['pseudonimo']}</p>
-                    <p><strong>Email:</strong> {$linha['email']}</p>
+                    <p><strong>Pseudônimo:</strong> {$linha['res_nome_fantasia']}</p>
+                    <p><strong>Titulo:</strong> {$linha['tit_nome']}</p>
                 </div>
                 <div>
-                    <p><strong>Pontos:</strong> {$linha['pontos']}</p>
                     <p><strong>Total de Resenhas:</strong> {$linha['total_resenhas']}</p>
-                </div>
-                <div>
-                    <a href='altera-formulario-resenhista.php?id={$linha['id_autor_resenha']}'>
-                        <div class=\"bx bxs-edit-alt\"></div>
-                    </a>
                 </div>
             </div>
             ";

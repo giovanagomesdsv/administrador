@@ -20,7 +20,7 @@ include "../protecao.php";
 
 <body style="background-color:#DEDEDE">
 <header>
-        Adiministrador BC
+        Administrador BC
     </header>
   <nav class="sidebar" id="sidebar"> 
         <div class="nome">

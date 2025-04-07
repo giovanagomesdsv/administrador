@@ -22,7 +22,7 @@ include "conexao-banco/conexao.php";
 </style>
 <body>
     <header>
-        Adiministrador BC
+        Administrador BC
     </header>
     <nav class="sidebar" id="sidebar"> 
         <div class="nome">

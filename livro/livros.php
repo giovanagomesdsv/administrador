@@ -17,7 +17,7 @@ include "../protecao.php";
 
 <body>
 <header>
-        Adiministrador BC
+        Administrador BC
     </header>
     <nav class="sidebar" id="sidebar"> 
         <div class="nome">
