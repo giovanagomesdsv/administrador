@@ -55,6 +55,8 @@
     height: 15rem;
     border: 1px solid red;
     margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 
