@@ -23,11 +23,17 @@
 }
 
 .card{
-    display: flex;
-    flex-direction: row;
+    position: relative;
     border: 1px solid red;
-    justify-content:space-between;
+    margin-top: 3rem;
+    background-color:var(--principal);
+    display: flex;
     flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    height:20rem;
+    width: 80%;
+   
 }
 .linhavaliar{
     margin-top: 2rem;
