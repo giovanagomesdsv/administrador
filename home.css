@@ -24,7 +24,7 @@
 
 .card{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border: 1px solid red;
     justify-content:space-between;
     flex-direction: column;
