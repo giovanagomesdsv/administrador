@@ -26,18 +26,18 @@ include "conexao-banco/conexao.php";
  
   <div class='cardazul'>
     <div class='imgtitulo'>
-    <p>{$row['livro_foto']}</p>
+      <p>{$row['livro_foto']}</p>
     <div class='cardbranco1'>
       <p>{$row['livro_sinopse']}</p>
     </div>
-    <p>{$row['resenha_titulo']}</p>
+      <p>{$row['resenha_titulo']}</p>
   
-</div>
-  <p>RESENHA</p>
-  <div class='cardbranco2'>
-   <p>{$row['resenha_texto']}</p>
   </div>
-   <p>{$row['res_nome_fantasia']}</p>
+      <p>RESENHA</p>
+  <div class='cardbranco2'>
+      <p>{$row['resenha_texto']}</p>
+  </div>
+      <p>{$row['res_nome_fantasia']}</p>
 
 
 <form action='enviar-avaliacao.php?id={$dado}' method='post' class='cardforms'>
