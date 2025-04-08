@@ -76,7 +76,7 @@ include "../protecao.php";
 <!--EXIBE OS CARDS DAS LIVRARIAS-->
 <div class="busca">
             <form action="" method="GET">
-                <input type="text" name="busca" placeholder="Busque as parcerias...">
+                <input type="text" name="busca" placeholder="Busque as livrarias...">
                 <button type="submit">Pesquisar</button>
             </form>
         </div>

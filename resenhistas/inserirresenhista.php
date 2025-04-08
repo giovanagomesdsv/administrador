@@ -1,17 +1,14 @@
 <?php
 include "../conexao-banco/conexao.php";
                   
-$nome = $_POST['nome'];
+$id = $_POST['id'];
 $pseudonimo = $_POST['pseudonimo'];
-$descricao = $_POST['descricao'];
-$endereco = $_POST['endereco'];                    
+$descricao = $_POST['descricao'];                
 $cidade = $_POST['cidade'];
 $estado = $_POST['estado'];                          
 $telefone = $_POST['telefone'];                
-$email = $_POST['email'];
 $instagram = $_POST['instagram'];                          
-$tiktok = $_POST['tiktok'];                                 
-$x_social  = $_POST['x'];                               
+                             
 
 if (isset($_FILES['arquivo'])) {
     $arquivo = $_FILES['arquivo'];
@@ -26,17 +23,19 @@ if (isset($_FILES['arquivo'])) {
         $nomeDoArquivo = $arquivo['name'];
         $novoNomeDoArquivo = uniqid();
         $extensao = strtolower(pathinfo($nomeDoArquivo, PATHINFO_EXTENSION));
+        $pasta = "../imagens/resenhistas/";
 
     if($extensao != "jpg" && $extensao != 'png')
        die("Tipo de arquivo não aceito!");
 
-       $path = $novoNomeDoArquivo . "." . $extensao;
+       $path =  $novoNomeDoArquivo . "." . $extensao;
 
-       $deu_certo = move_uploaded_file($arquivo["tmp_name"], $path);
+       $caminho =  $pasta . $novoNomeDoArquivo . "." . $extensao;
+
+       $deu_certo = move_uploaded_file($arquivo["tmp_name"],  $caminho);
 }
 
-$sql_code = "INSERT INTO autor_resenha ( nome, pseudonimo, descricao, endereco, cidade, estado, telefone, email, instagram, tiktok, x_social,  path) VALUES ( '$nome', '$pseudonimo', '$descricao', '$endereco', '$cidade', '$estado', '$telefone', '$email', '$instagram', '$tiktok', '$x_social', '$path')";
-
+$sql_code = "INSERT INTO resenhistas ( res_id, res_nome_fantasia, res_cidade, res_estado, res_telefone  ,  res_foto, res_perfil, res_social ) VALUES ( '$id', '$pseudonimo',  '$cidade', '$estado', '$telefone', '$path', '$descricao', '$instagram')";
 
 if (mysqli_query($conn, $sql_code)) {
     echo '
@@ -49,7 +48,7 @@ if (mysqli_query($conn, $sql_code)) {
     echo '
     <script>
          window.alert("Erro na inserção!");
-         location.href="novoresenhista.php";
+         location.href="inserirresenhista.php";
     </script>
     ';
 };

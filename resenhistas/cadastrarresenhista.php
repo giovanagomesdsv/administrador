@@ -6,22 +6,14 @@
     <title>Cadastro de resenhistas</title>
 </head>
 <body>
-<form action="inserirnovoresenhista.php" enctype="multipart/form-data" method="POST" name="cadastroresenhista">
+<form action="inserirresenhista.php" enctype="multipart/form-data" method="POST" name="cadastroresenhista">
         <h1>CADASTRO DE RESENHISTAS</h1>
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome">
+
+        <label for="id">Id:</label>
+        <input type="text" name="id"> 
 
         <label for="pseudonimo">Pseudonimo:</label>
-        <input type="text" name="pseudonimo">
-
-        <label for="descricao">Descrição:</label>
-        <input type="text" name="descricao">
-
-        <label for="arquivo">Selecione uma imagem</label>
-        <input type="file" name="arquivo" >
-
-        <label for="endereco">Endereço:</label>
-        <input type="text" name="endereco">
+        <input type="text" name="pseudonimo">    
 
         <label for="cidade">Cidade:</label>
         <input type="text" name="cidade">
@@ -37,17 +29,14 @@
         <label for="telefone">Telefone:</label>
         <input type="text" name="telefone" placeholder="5511987543211">
 
-        <label for="email">E-mail:</label>
-        <input type="email" name="email">
-
         <label for="instagram">Instagram:</label>
         <input type="text" name="instagram" placeholder="URL">
 
-        <label for="tiktok">Tik Tok:</label>
-        <input type="text" name="tiktok" placeholder="URL">
+        <label for="descricao">Perfil:</label>
+        <input type="text" name="descricao">
 
-        <label for="x">x:</label>
-        <input type="text" name="x" placeholder="URL">
+        <label for="arquivo">Selecione uma imagem</label>
+        <input type="file" name="arquivo" >
 
         <input type="submit" value="cadastrar">
 
