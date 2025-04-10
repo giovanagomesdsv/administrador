@@ -93,7 +93,7 @@ INNER JOIN livrarias_livros ON livros.livro_id = livrarias_livros.livro_id
 INNER JOIN livrarias ON livrarias_livros.liv_id = livrarias.liv_id
 INNER JOIN livro_autores ON livros.livro_id = livro_autores.livro_id
 INNER JOIN autores ON livro_autores.aut_id = autores.aut_id
-   WHERE livro_titulo LIKE '%$pesquisa%'";
+   WHERE livro_titulo LIKE '%$pesquisa%' AND liv_livro_status = '1'";
     // PAREI AQUI
                 $sql_query = $conn->query($sql_code) or die("Erro ao consultar: " . $conn->error);
 
