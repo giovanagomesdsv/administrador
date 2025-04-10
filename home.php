@@ -20,17 +20,18 @@ include "conexao-banco/conexao.php";
 <style>
 
 </style>
+
 <body>
     <header>
         Administrador BC
     </header>
-    <nav class="sidebar" id="sidebar"> 
+    <nav class="sidebar" id="sidebar">
         <div class="nome">
             <div class="logo_name"> <?php echo $_SESSION['nome']; ?></div>
             <div class="menu" id="menu">
                 <i class="bx bx-menu"></i>
             </div>
-              
+
         </div>
         <ul class="nav-list">
             <li class="fix">
@@ -69,17 +70,17 @@ include "conexao-banco/conexao.php";
         </ul>
     </nav>
 
-<!--começo do corpo da página-->
+    <!--começo do corpo da página-->
     <main>
-        
+
         <div class="titulo">
-          <h3>Olá, <?php echo $_SESSION['nome']; ?>, <br> Seja bem-vindo!</h3> 
+            <h3>Olá, <?php echo $_SESSION['nome']; ?>, <br> Seja bem-vindo!</h3>
         </div>
-            <div class="linhavaliar">
+        <div class="linhavaliar">
             <p>ㅤㅤㅤㅤㅤㅤAVALIARㅤㅤㅤㅤㅤㅤ</p>
-           </div>
+        </div>
         <div class="avaliar">
-           <?php
+            <?php
             $sql = 'SELECT resenha_titulo, res_nome_fantasia, resenha_id, livro_foto FROM RESENHAS INNER JOIN RESENHISTAS ON resenhistas.res_id = resenhas.res_id INNER JOIN LIVROS ON resenhas.livro_id = livroS.livro_id WHERE resenha_status = 0';
 
             if ($result = mysqli_query($conn, $sql)) {
@@ -113,17 +114,31 @@ include "conexao-banco/conexao.php";
            </a>
         </div>
     </div>
+    <div class='card'>
+        <div>
+            <img  src='../administrador/imagens/livros/{$resposta['livro_foto']}' alt='' >
+        </div>
+        <div>
+            <p>{$resposta['resenha_titulo']}</p>
+            <p>{$resposta['res_nome_fantasia']}</p>
+        </div>
+        <div>
+           <a href='avaliar.php?id={$resposta['resenha_id']}'>
+              <button class='botao'>Avaliar</button>
+           </a>
+        </div>
+    </div>
     
                     ";
                 }
             }
 
-             ?>
+            ?>
         </div>
-   
-     
+
+
     </main>
-    
+
     <script src="script.js"></script>
 
 </body>

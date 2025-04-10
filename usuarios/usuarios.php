@@ -28,9 +28,7 @@ include "../protecao.php";
             <div class="menu" id="menu">
                 <i class="bx bx-menu"></i>
             </div>
-               <div class="linhavaliar">
-                <p>AVALIAR</p>
-               </div>
+               
         </div>
         <ul class="nav-list">
             <li >
@@ -121,7 +119,7 @@ include "../protecao.php";
 
         <div>
             <?php
-              $consulta = "SELECT usu_nome, usu_id, usu_status FROM usuarios ORDER BY desc";  
+              $consulta = "SELECT usu_nome, usu_id, usu_status FROM usuarios order by usu_data_criacao desc";  
 
               if ($card = mysqli_query($conn, $consulta)) {
                 while ($row = mysqli_fetch_array($card)) {
