@@ -121,7 +121,7 @@ include "../protecao.php";
 
         <div>
             <?php
-              $consulta = "SELECT usu_nome, usu_id, usu_status FROM usuarios ";  
+              $consulta = "SELECT usu_nome, usu_id, usu_status FROM usuarios ORDER BY desc";  
 
               if ($card = mysqli_query($conn, $consulta)) {
                 while ($row = mysqli_fetch_array($card)) {
