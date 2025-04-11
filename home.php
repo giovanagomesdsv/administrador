@@ -76,9 +76,6 @@ include "conexao-banco/conexao.php";
         <div class="titulo">
             <h3>Olá, <?php echo $_SESSION['nome']; ?>, <br> Seja bem-vindo!</h3>
         </div>
-        <div class="linhavaliar">
-            <p>ㅤㅤㅤㅤㅤㅤAVALIARㅤㅤㅤㅤㅤㅤ</p>
-        </div>
         <div class="avaliar">
             <?php
             $sql = "SELECT resenha_titulo, res_nome_fantasia, resenha_id, livro_foto FROM RESENHAS INNER JOIN RESENHISTAS ON resenhistas.res_id = resenhas.res_id INNER JOIN LIVROS ON resenhas.livro_id = livroS.livro_id WHERE resenha_status = 0";
@@ -86,62 +83,20 @@ include "conexao-banco/conexao.php";
             if ($result = mysqli_query($conn, $sql)) {
                 while ($resposta = mysqli_fetch_array($result)) {
                     echo "
-    <div class='card'>
-        <div>
-            <img  src='../administrador/imagens/livros/{$resposta['livro_foto']}' alt='' >
-        </div>
-        <div>
-            <p>{$resposta['resenha_titulo']}</p>
-            <p>{$resposta['res_nome_fantasia']}</p>
-        </div>
-        <div>
-           <a href='avaliar.php?id={$resposta['resenha_id']}'>
-              <button class='botao'>Avaliar</button>
-           </a>
-        </div>
-    </div>
-    <div class='card'>
-        <div>
-            <img  src='../administrador/imagens/livros/{$resposta['livro_foto']}' alt='' >
-        </div>
-        <div>
-            <p>{$resposta['resenha_titulo']}</p>
-            <p>{$resposta['res_nome_fantasia']}</p>
-        </div>
-        <div>
-           <a href='avaliar.php?id={$resposta['resenha_id']}'>
-              <button class='botao'>Avaliar</button>
-           </a>
-        </div>
-    </div>
-    <div class='card'>
-        <div>
-            <img  src='../administrador/imagens/livros/{$resposta['livro_foto']}' alt='' >
-        </div>
-        <div>
-            <p>{$resposta['resenha_titulo']}</p>
-            <p>{$resposta['res_nome_fantasia']}</p>
-        </div>
-        <div>
-           <a href='avaliar.php?id={$resposta['resenha_id']}'>
-              <button class='botao'>Avaliar</button>
-           </a>
-        </div>
-    </div>
-    <div class='card'>
-        <div>
-            <img  src='../administrador/imagens/livros/{$resposta['livro_foto']}' alt='' >
-        </div>
-        <div>
-            <p>{$resposta['resenha_titulo']}</p>
-            <p>{$resposta['res_nome_fantasia']}</p>
-        </div>
-        <div>
-           <a href='avaliar.php?id={$resposta['resenha_id']}'>
-              <button class='botao'>Avaliar</button>
-           </a>
-        </div>
-    </div>
+                    <div class='card'>
+                        <div class='imagem'>
+                            <img class='imglivro' src='../administrador/imagens/livros/{$resposta['livro_foto']}' alt=''>
+                        </div>
+                        <div class='info'>
+                            <p>{$resposta['resenha_titulo']}</p>
+                            <p>{$resposta['res_nome_fantasia']}</p>
+                        </div>
+                        <div class='acao'>
+                           <a href='avaliar.php?id={$resposta['resenha_id']}'>
+                              <button class='botao'>Avaliar</button>
+                           </a>
+                        </div>
+                    </div>             
                     ";
                 }
             }

@@ -8,6 +8,7 @@
  text-decoration: none;
  list-style-type: none;
  transition: .2s;
+ color: var(--text);
  scroll-behavior: smooth;
 }
 

@@ -16,34 +16,48 @@
             echo "Falha ao logar! E-mail incorreto.";
         }
 */
+
 session_start();
 include "conexao-banco/conexao.php";
 
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email']) && isset($_POST['senha'])) {
-    
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email'], $_POST['senha'], $_POST['tipo_usuario'])) {
+
     $email = trim($_POST['email']);
     $senha = trim($_POST['senha']);
+    $tipo_usuario = (int)$_POST['tipo_usuario'];
 
-    if (empty($email)) {
-        echo "Preencha seu e-mail.";
-    } elseif (empty($senha)) {
-        echo "Preencha sua senha.";
+    if (empty($email) || empty($senha) || $_POST['tipo_usuario'] === "") {
+        echo "Preencha todos os campos.";
     } else {
-  
-        $sql_code = "SELECT * FROM usuarios WHERE usu_email = ? AND usu_tipo_usuario = 2 AND usu_status = 1";
+        $sql_code = "SELECT * FROM usuarios WHERE usu_email = ? AND usu_tipo_usuario = ? AND usu_status = 1";
         $stmt = $conn->prepare($sql_code);
-        $stmt->bind_param("s", $email);
+        $stmt->bind_param("si", $email, $tipo_usuario);
         $stmt->execute();
         $result = $stmt->get_result();
 
         if ($result->num_rows === 1) {
             $usuario_db = $result->fetch_assoc();
 
-            if ($senha === $usuario_db['usu_senha']) {
+            if ($senha === $usuario_db['usu_senha']) { // ou use password_verify()
                 $_SESSION['id'] = $usuario_db['usu_id'];
                 $_SESSION['nome'] = $usuario_db['usu_nome'];
+                $_SESSION['tipo'] = $usuario_db['usu_tipo_usuario'];
 
-                header("Location: home.php");
+                // Redirecionamento com base no tipo
+                switch ($usuario_db['usu_tipo_usuario']) {
+                    case 0: // Resenhista
+                        header("Location: resenhistas/resenhistas.php");
+                        break;
+                    case 1: // Livraria
+                        header("Location: livrarias/livrarias.php");
+                        break;
+                    case 2: // Administrador
+                        header("Location: home.php");
+                        break;
+                    default:
+                        echo "Tipo de usuário inválido.";
+                }
+
                 exit();
             } else {
                 echo "Falha ao logar! Senha incorreta.";
@@ -55,6 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email']) && isset($_P
         $stmt->close();
     }
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,33 +84,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['email']) && isset($_P
 </head>
 
 <body>
-<div class="container" id="container">
+    <div class="container" id="container">
 
-    <div class="form-container sign-in">
-        <form action="" method="POST" name="form1">
-            <h1>Entrar</h1>
-            <input type="text" name="email" placeholder="E-mail">
-            <input type="password" name="senha" placeholder="Senha">
-            <a href="" style="color: #fff">Esqueci a senha</a>
-            <button class="btn">Entrar</button>
-        </form>
-    </div>
+        <div class="form-container sign-in">
+            <form action="" method="POST" name="form1">
+                <h1>Entrar</h1>
+                <input type="text" name="email" placeholder="E-mail" required>
+                <input type="password" name="senha" placeholder="Senha" required>
 
-    <div class="toggle-container">
-        <div class="toggle">
-            <div class="toggle-panel toggle-right">
-                <h1>Olá, você está acessando o site Administrador do BIBLIÓFILOS Community!</h1>
-                <p>É necessário que um administrador já cadastrado realize o cadastro de um novo colaborador.</p>
+                <select name="tipo_usuario" required>
+                        <option value="">Selecione o tipo de usuário</option>
+                        <option value="2">Administrador</option>
+                        <option value="0">Resenhista</option>
+                        <option value="1">Livraria</option>
+                </select>
+
+                <a href="" style="color: #fff">Esqueci a senha</a>
+                <button class="btn">Entrar</button>
+            </form>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-right">
+                    <h1>Olá, você está acessando o site Administrador do BIBLIÓFILOS Community!</h1>
+                    <p>É necessário que um administrador já cadastrado realize o cadastro de um novo colaborador.</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-
-<h1>TESTE
-</h1>
 
 </body>
 
 </html>
-
